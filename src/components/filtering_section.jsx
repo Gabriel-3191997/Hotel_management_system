@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faSearch } from "@fortawesome/free-solid-svg-icons";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -57,12 +57,13 @@ class Filtering extends React.Component {
               <input type="number" placeholder="0" className="w-20 md:w-auto" />
             </p>
           </div>
-          <div className="w-full md:w-auto md:ml-20">
-            <input
+          <div className="md:w-auto w-full md:ml-20">
+            <button
               type="submit"
-              value="search"
-              className="bg-amber-500 px-5 py-3 mt-6"
-            />
+              className="bg-amber-500 text-md font-sans py-3 cursor-pointer px-3"
+            >
+              <FontAwesomeIcon icon={faSearch} className="text-xl" />
+            </button>
           </div>
         </div>
       </>
