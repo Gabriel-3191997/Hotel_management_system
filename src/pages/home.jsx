@@ -4,6 +4,7 @@ import Banner from "../components/banner";
 import Filtering from "../components/filtering_section";
 import TopHotels from "../components/hotel_listing";
 import Discover from "../components/discovery";
+import Footer from "../components/footer";
 
 class HomePage extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class HomePage extends React.Component {
         <Filtering />
         <TopHotels />
         <Discover />
+        <Footer />
       </>
     );
   }

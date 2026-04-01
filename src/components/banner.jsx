@@ -22,9 +22,12 @@ class Banner extends React.Component {
             </p>
             <br />
             <div className="md:py-1 py-0 md:mx-0 mx-5">
-              <button className="bg-amber-500 text-md rounded-sm cursor-pointer hover:bg-amber-400 font-sans px-8 py-3 capitalize">
+              <a
+                href="#discover"
+                className="bg-amber-500 text-md rounded-sm cursor-pointer hover:bg-amber-400 font-sans px-8 py-3 capitalize"
+              >
                 discover
-              </button>
+              </a>
             </div>
           </div>
           {/* carousel image */}

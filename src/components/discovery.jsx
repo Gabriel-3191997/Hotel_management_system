@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faStar } from "@fortawesome/free-solid-svg-icons";
 import img1 from "../assets/images/Z (6).jpeg";
@@ -11,7 +12,7 @@ class Discover extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-white h-auto md:h-96 md:mx-8">
+        <div className="bg-white h-auto md:h-96 md:mx-8 md:mb-32" id="discover">
           <div className="bg-white flex flex-wrap justify-between gap-0">
             <div className="w-auto bg-white">
               {/* <h1 className="text-3xl font-semibold  mx-3 py-10 text-left md:mx-14 font-sans capitalize md:mt-8">
@@ -42,7 +43,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                royal grand hotel <br />
+                <Link to="/royal-grand-hotel">royal grand hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   12 Street Sinkor
                 </span>
@@ -89,7 +90,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                corona hotel <br />
+                <Link to="/corona-hotel">corona hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   24 Street Sinkor
                 </span>
@@ -134,7 +135,7 @@ class Discover extends React.Component {
                 className="object-cover w-full h-48 sm:h-56"
               />
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                boluvard palace <br />
+                <Link to="/boluvard-palace">boluvard palace</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   12 Street Sinkor
                 </span>
@@ -206,7 +207,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                bella casa <br />
+                <Link to="/bella-casa-hotel">bella casa</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   3rd Street Sinkor
                 </span>
@@ -253,7 +254,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                sinkor palace hotel <br />
+                <Link to="/sinkor-palace-hotel">sinkor palace hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   congo town
                 </span>
@@ -298,7 +299,7 @@ class Discover extends React.Component {
                 className="object-cover w-full h-48 sm:h-56"
               />
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                fammington hotel <br />
+                <Link to="/fammington-hotel">fammington hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   12 Street Sinkor
                 </span>

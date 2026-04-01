@@ -19,7 +19,7 @@ class TopHotels extends React.Component {
                 <img
                   src={img2}
                   alt=""
-                  className="md:cursor-pointer brightness-75 md:hover:scale-105 w-full h-full object-cover md:w-full md:h-full"
+                  className="md:rounded-sm md:cursor-pointer brightness-75 md:hover:scale-105 w-full h-full object-cover md:w-full md:h-full"
                 />
               </span>
             </div>
@@ -28,7 +28,7 @@ class TopHotels extends React.Component {
                 <img
                   src={img1}
                   alt=""
-                  className="md:cursor-pointer w-full h-full md:hover:scale-105 object-cover brightness-75 md:w-full md:h-full"
+                  className="md:rounded-sm md:cursor-pointer w-full h-full md:hover:scale-105 object-cover brightness-75 md:w-full md:h-full"
                 />
               </span>
             </div>
@@ -37,7 +37,7 @@ class TopHotels extends React.Component {
                 <img
                   src={img3}
                   alt=""
-                  className="md:hover:scale-105 hover:cursor-pointer h-full md:h-full brightness-75 object-cover md:w-full w-full"
+                  className="md:rounded-sm md:hover:scale-105 hover:cursor-pointer h-full md:h-full brightness-75 object-cover md:w-full w-full"
                 />
               </span>
             </div>
