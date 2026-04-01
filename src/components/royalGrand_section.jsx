@@ -21,7 +21,7 @@ class RoyalGrandSection extends React.Component {
             </div>
           </div>
           <div className="w-lg bg-white">
-            <div className="border-none mx-5 py-8 md:border-gray-500 h-96 w-96  md:shadow-none bg-white">
+            <div className="border-none mx-5  md:border-gray-500 h-96 w-96  md:shadow-none bg-white">
               <h1 className="text-left font-sans text-2xl capitalize font-semibold md:py-10">
                 royal grand hotel
               </h1>
