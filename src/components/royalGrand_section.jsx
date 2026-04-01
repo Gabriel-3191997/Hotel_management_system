@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+
 import img1 from "../assets/images/Z (6).jpeg";
 class RoyalGrandSection extends React.Component {
   render() {
@@ -23,6 +26,10 @@ class RoyalGrandSection extends React.Component {
                 royal grand hotel
               </h1>
               <p className="text-left font-sans py-8 text-lg capitalize">
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="mr-2 text-black"
+                />
                 15 street sinkor <br /> monrovia, liberia
               </p>
               <div className=" md:mt-8 my-2 flex flex-wrap justify-start">
