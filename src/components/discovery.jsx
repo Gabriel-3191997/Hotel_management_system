@@ -12,15 +12,15 @@ class Discover extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-white h-auto md:h-96 md:mx-8 md:mb-32" id="discover">
-          <div className="bg-white flex flex-wrap justify-between gap-0">
+        <div className="bg-white h-auto md:mb-20 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8" id="discover">
+          <div className="bg-white flex flex-wrap items-center justify-between gap-2">
             <div className="w-auto bg-white">
               {/* <h1 className="text-3xl font-semibold  mx-3 py-10 text-left md:mx-14 font-sans capitalize md:mt-8">
                 discover
               </h1> */}
             </div>
             <div className="w-auto bg-white">
-              <h1 className="text-xl font-semibold  mx-3 py-10 text-left md:mr-20 font-sans capitalize md:mt-8">
+              <h1 className="text-xl font-semibold mx-0 py-6 sm:py-8 text-left md:mr-0 font-sans capitalize">
                 <FontAwesomeIcon icon={faFilter} className="text-lg mx-0" />
 
                 <span className="text-sm font-normal">
@@ -33,13 +33,13 @@ class Discover extends React.Component {
               </h1>
             </div>
           </div>
-          <div className="flex flex-wrap md:justify-evenly justify-center items-start md:items-center md:mt-10 md:mx-8 md:gap-2 gap-4">
-            <div className="bg-white w-full sm:w-96 max-w-sm md:max-w-none mx-3 sm:mx-0 h-auto md:h-96">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
+            <div className="bg-white w-full h-auto">
               <div className="w-auto h-auto">
                 <img
                   src={img1}
                   alt=""
-                  className="object-cover w-full h-48 sm:h-56"
+                  className="object-cover w-full h-52 sm:h-56 md:h-60"
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
@@ -81,12 +81,12 @@ class Discover extends React.Component {
                 </div> */}
               </div>
             </div>
-            <div className="bg-white w-full sm:w-96 max-w-sm md:max-w-none mx-3 sm:mx-0 h-auto md:h-96">
+            <div className="bg-white w-full h-auto">
               <div className="w-auto h-auto">
                 <img
                   src={img2}
                   alt=""
-                  className="object-cover w-full h-48 sm:h-56"
+                  className="object-cover w-full h-52 sm:h-56 md:h-60"
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
@@ -128,11 +128,11 @@ class Discover extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bg-white w-full sm:w-96 max-w-sm md:max-w-none mx-3 sm:mx-0 h-48 sm:h-56 md:h-96">
+            <div className="bg-white w-full h-auto">
               <img
                 src={img3}
                 alt="Boluvard Palace"
-                className="object-cover w-full h-48 sm:h-56"
+                className="object-cover w-full h-52 sm:h-56 md:h-60"
               />
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
                 <Link to="/boluvard-palace">boluvard palace</Link> <br />
@@ -176,15 +176,15 @@ class Discover extends React.Component {
           </div>
         </div>
         {/* second row */}
-        <div className="bg-white h-auto md:h-96 md:mx-8 md:mt-32 mt-32">
-          <div className="bg-white flex flex-wrap justify-between gap-0">
+        <div className="bg-white h-auto mt-16 sm:mt-20 md:mt-24 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-white flex flex-wrap items-center justify-between gap-2">
             <div className="w-auto bg-white">
               {/* <h1 className="text-3xl font-semibold  mx-3 py-10 text-left md:mx-14 font-sans capitalize md:mt-8">
                 discover
               </h1> */}
             </div>
             {/* <div className="w-auto bg-white">
-              <h1 className="text-xl font-semibold  mx-3 py-10 text-left md:mr-20 font-sans capitalize md:mt-8">
+              <h1 className="text-xl font-semibold mx-0 py-6 sm:py-8 text-left md:mr-0 font-sans capitalize">
                 <FontAwesomeIcon icon={faFilter} className="text-lg mx-0" />
 
                 <span className="text-sm font-normal">
@@ -197,13 +197,13 @@ class Discover extends React.Component {
               </h1>
             </div> */}
           </div>
-          <div className="flex flex-wrap md:justify-evenly justify-center items-start md:items-center md:mt-10 md:mx-8 md:gap-2 gap-4">
-            <div className="bg-white w-full sm:w-96 max-w-sm md:max-w-none mx-3 sm:mx-0 h-auto md:h-96">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
+            <div className="bg-white w-full h-auto">
               <div className="w-auto h-auto">
                 <img
                   src={img4}
                   alt=""
-                  className="object-cover w-full h-48 sm:h-56"
+                  className="object-cover w-full h-52 sm:h-56 md:h-60"
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
@@ -245,12 +245,12 @@ class Discover extends React.Component {
                 </div> */}
               </div>
             </div>
-            <div className="bg-white w-full sm:w-96 max-w-sm md:max-w-none mx-3 sm:mx-0 h-auto md:h-96">
+            <div className="bg-white w-full h-auto">
               <div className="w-auto h-auto">
                 <img
                   src={img5}
                   alt=""
-                  className="object-cover w-full h-48 sm:h-56"
+                  className="object-cover w-full h-52 sm:h-56 md:h-60"
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
@@ -292,11 +292,11 @@ class Discover extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bg-white w-full sm:w-96 max-w-sm md:max-w-none mx-3 sm:mx-0 h-48 sm:h-56 md:h-96">
+            <div className="bg-white w-full h-auto">
               <img
                 src={img6}
                 alt="Boluvard Palace"
-                className="object-cover w-full h-48 sm:h-56"
+                className="object-cover w-full h-52 sm:h-56 md:h-60"
               />
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
                 <Link to="/fammington-hotel">fammington hotel</Link> <br />

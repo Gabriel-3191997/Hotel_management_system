@@ -11,12 +11,12 @@ class AboutUs extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-white flex flex-col md:flex-row justify-evenly gap-6 md:gap-8 px-4 md:px-0 py-6 md:py-0">
-          <div className="w-full md:w-1/2 max-w-2xl">
-            <h1 className="text-2xl font-sans capitalize md:mx-20 md:py-3 font-semibold text-left">
+        <div className="bg-white flex flex-col md:flex-row justify-evenly gap-6 md:gap-8 px-4 sm:px-6 md:px-0 py-6 md:py-0">
+          <div className="w-full md:w-1/2 max-w-2xl mx-auto md:mx-0">
+            <h1 className="text-2xl font-sans capitalize mx-2 sm:mx-6 md:mx-20 md:py-3 font-semibold text-left">
               about us
             </h1>
-            <p className="text-left font-sans mx-2 md:mx-20 py-2">
+            <p className="text-left font-sans mx-2 sm:mx-6 md:mx-20 py-2">
               Integer suscipit placerat nulla viverra ornare pariatur tellus
               doloremque perferendis doloremque per semper rutrum praesentium,
               tempor volutpat pede officiis et, tempus quasi porta rem! Ornare
@@ -27,7 +27,7 @@ class AboutUs extends React.Component {
             </p>
             {/* features */}
 
-            <div className="flex flex-wrap justify-start gap-6 md:gap-10 md:ml-20 md:my-16 bg-white">
+            <div className="flex flex-wrap justify-start gap-6 md:gap-10 mx-2 sm:mx-6 md:ml-20 md:my-16 bg-white">
               {/* wifi connection */}
               <div className="w-24">
                 <FontAwesomeIcon
@@ -60,7 +60,7 @@ class AboutUs extends React.Component {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 max-w-lg">
+          <div className="w-full md:w-1/2 max-w-lg mx-auto md:mx-0">
             <img
               src={img1}
               alt=""
