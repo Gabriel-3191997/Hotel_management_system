@@ -17,22 +17,22 @@ const SlideShow = () => {
       <div>
         <img
           src={image1}
-          alt=""
-          className="object-fill brightness-75 md:rounded-sm border-none"
+          alt="Royal Grand Hotel"
+          className="object-cover  md:rounded-none border-none"
         />
       </div>
       <div>
         <img
           src={image2}
           alt=""
-          className="object-fill brightness-75 md:rounded-sm border-none"
+          className="object-cover md:rounded-none border-none"
         />
       </div>
       <div>
         <img
           src={image3}
           alt=""
-          className="object-fill brightness-75 md:rounded-sm border-none"
+          className="object-cover md:rounded-none border-none"
         />
       </div>
     </Carousel>
