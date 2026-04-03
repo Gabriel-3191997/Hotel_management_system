@@ -16,7 +16,7 @@ class NavBar extends React.Component {
                 class="h-7"
                 alt="Flowbite Logo"
               /> */}
-              <span class="self-center text-lg text-heading font-normal md:mx-20 mx-2 whitespace-nowrap uppercase m">
+              <span class="self-center text-xl font-outfit md:mx-20 mx-2 whitespace-nowrap uppercase m">
                 luxx
               </span>
             </Link>
