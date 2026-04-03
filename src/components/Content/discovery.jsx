@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faStar } from "@fortawesome/free-solid-svg-icons";
-import img1 from "../assets/images/Z (6).jpeg";
-import img2 from "../assets/images/9k= (9).jpeg";
-import img3 from "../assets/images/2Q== (12).jpeg";
-import img4 from "../assets/images/2Q== (24).jpeg";
-import img5 from "../assets/images/2Q== (11).jpeg";
-import img6 from "../assets/images/2Q== (9).jpeg";
+import img1 from "../../assets/images/Z (6).jpeg";
+import img2 from "../../assets/images/9k= (9).jpeg";
+import img3 from "../../assets/images/2Q== (12).jpeg";
+import img4 from "../../assets/images/2Q== (24).jpeg";
+import img5 from "../../assets/images/2Q== (11).jpeg";
+import img6 from "../../assets/images/2Q== (9).jpeg";
 class Discover extends React.Component {
   render() {
     return (

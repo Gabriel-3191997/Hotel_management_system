@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../components/nav";
+import NavBar from "../components/Content/nav";
 
 class FammingtonHotel extends React.Component {
   render() {

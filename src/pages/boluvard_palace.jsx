@@ -1,14 +1,15 @@
 import React from "react";
-import NavBar from "../components/nav";
+import NavBar from "../components/Content/nav";
+import BouluvardHotelAbout from "../components/Content/boluvard_hotel_about";
+import BoluvardHotelSection from "../components/Content/boluvard_hotel_section";
 
 class BoluvardPalaceHotel extends React.Component {
   render() {
     return (
       <>
         <NavBar />
-        <div className="px-6 py-10">
-          <h1 className="text-2xl font-semibold">Boluvard Palace Hotel</h1>
-        </div>
+        <BoluvardHotelSection/>
+       <BouluvardHotelAbout/>
       </>
     );
   }

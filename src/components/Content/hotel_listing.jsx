@@ -1,7 +1,7 @@
 import React from "react";
-import img1 from "../assets/images/9k= (9).jpeg";
-import img2 from "../assets/images/2Q== (12).jpeg";
-import img3 from "../assets/images/2Q== (11).jpeg";
+import img1 from "../../assets/images/9k= (9).jpeg";
+import img2 from "../../assets/images/2Q== (12).jpeg";
+import img3 from "../../assets/images/2Q== (11).jpeg";
 class TopHotels extends React.Component {
   render() {
     return (

@@ -1,17 +1,22 @@
 import React from "react";
+import RoomSuites from "./suites";
 
-import img1 from "../assets/images/Z (6).jpeg";
+import img1 from "../../assets/images/9k= (9).jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCar,
   faSwimmer,
   faWifiStrong,
 } from "@fortawesome/free-solid-svg-icons";
-class AboutUs extends React.Component {
-  render() {
-    return (
-      <>
-        <div className="bg-white flex flex-col md:flex-row justify-evenly gap-6 md:gap-8 px-4 sm:px-6 md:px-0 py-6 md:py-0">
+
+class CoronaHotelAbout extends React.Component{
+
+    render(){
+
+        return (
+
+            <>
+            <div className="bg-white flex flex-col md:flex-row justify-evenly gap-6 md:gap-8 px-4 sm:px-6 md:px-0 py-6 md:py-0">
           <div className="w-full md:w-1/2 max-w-2xl mx-auto md:mx-0">
             <h1 className="text-2xl font-sans capitalize mx-2 sm:mx-6 md:mx-20 md:py-3 font-semibold text-left">
               about us
@@ -35,7 +40,7 @@ class AboutUs extends React.Component {
                   className="text-3xl text-black"
                 />
                 <br />
-                <p className="text-center font-sans capitalize text-sm mt-2 md:my-3">
+                <p className="text-left font-sans capitalize text-sm mt-2 md:my-3">
                   wifi
                 </p>
               </div>
@@ -43,7 +48,7 @@ class AboutUs extends React.Component {
               <div className="w-24">
                 <FontAwesomeIcon icon={faCar} className="text-3xl text-black" />
                 <br />
-                <p className="text-center font-sans capitalize text-sm mt-2 md:my-3">
+                <p className="text-left font-sans capitalize text-sm mt-2 md:my-3">
                   parking lot
                 </p>
               </div>
@@ -54,7 +59,7 @@ class AboutUs extends React.Component {
                   className="text-3xl text-black"
                 />
                 <br />
-                <p className="text-center font-sans capitalize text-sm mt-2 md:my-3">
+                <p className="text-left font-sans capitalize text-sm mt-2 md:my-3">
                   swimming pool
                 </p>
               </div>
@@ -68,9 +73,11 @@ class AboutUs extends React.Component {
             />
           </div>
         </div>
-      </>
-    );
-  }
+        <RoomSuites />
+
+            </>
+        );
+    }
 }
 
-export default AboutUs;
+export default CoronaHotelAbout;

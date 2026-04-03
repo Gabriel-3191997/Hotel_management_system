@@ -1,14 +1,15 @@
 import React from "react";
-import NavBar from "../components/nav";
+import NavBar from "../components/Content/nav";
+import CoronaHotelSection from "../components/Content/corona_hotel_section";
+import CornaHotelAbout from "../components/Content/corona_hotel_about";
 
 class CoronaHotel extends React.Component {
   render() {
     return (
       <>
         <NavBar />
-        <div className="px-6 py-10">
-          <h1 className="text-2xl font-semibold">Corona Hotel</h1>
-        </div>
+        <CoronaHotelSection/>
+        <CornaHotelAbout/>
       </>
     );
   }

@@ -1,10 +1,10 @@
 import React from "react";
-import NavBar from "../components/nav";
-import Banner from "../components/banner";
-import Filtering from "../components/filtering_section";
-import TopHotels from "../components/hotel_listing";
-import Discover from "../components/discovery";
-import Footer from "../components/footer";
+import NavBar from "../components/Content/nav";
+import Banner from "../components/Content/banner";
+import Filtering from "../components/Content/filtering_section";
+import TopHotels from "../components/Content/hotel_listing";
+import Discover from "../components/Content/discovery";
+import Footer from "../components/Content/footer";
 
 class HomePage extends React.Component {
   render() {
