@@ -42,27 +42,28 @@ class Filtering extends React.Component {
               />
             </div>
           </div>
+          {/* destination */}
           <div className="w-full md:w-auto">
             <p className="font-sans text-lg capitalize">
-              adult
+              location
               <br />
-              <input type="number" placeholder="0" className="w-20 md:w-auto" />
+              <input type="text" placeholder="search.." className="w-20 md:w-auto" />
             </p>
           </div>
 
-          <div className="w-full md:w-32">
+          {/* <div className="w-full md:w-32">
             <p className="font-sans text-lg capitalize">
               children
               <br />
               <input type="number" placeholder="0" className="w-20 md:w-auto" />
             </p>
-          </div>
-          <div className="md:w-auto w-full md:ml-20">
+          </div> */}
+          <div className="md:w-auto w-auto md:ml-10">
             <button
               type="submit"
               className="bg-amber-500 text-md font-sans py-3 cursor-pointer px-3"
             >
-              <FontAwesomeIcon icon={faSearch} className="text-xl" />
+              <FontAwesomeIcon icon={faSearch} className="text-lg" />
             </button>
           </div>
         </div>

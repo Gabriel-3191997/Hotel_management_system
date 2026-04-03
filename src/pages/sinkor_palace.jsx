@@ -1,15 +1,17 @@
 import React from "react";
 import NavBar from "../components/Content/nav";
+import SinkorPalaceAbout from "../components/Content/sinkor_palace_hotel_about";
+import SinkorPalaceSection from "../components/Content/sinkor_palace_section";
 
 class SinkorPalaceHotel extends React.Component {
   render() {
     return (
       <>
         <NavBar />
-        <div className="px-6 py-10">
-          <h1 className="text-2xl font-semibold">Sinkor Palace Hotel</h1>
-        </div>
-      </>
+        
+        <SinkorPalaceSection/>
+        <SinkorPalaceAbout/>
+              </>
     );
   }
 }

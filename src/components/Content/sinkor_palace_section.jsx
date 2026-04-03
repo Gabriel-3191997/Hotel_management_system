@@ -9,14 +9,15 @@ import img2 from "../../assets/images/Z (18).jpeg";
 import img3 from "../../assets/images/9k= (18).jpeg";
 import img4 from "../../assets/images/Z (16).jpeg";
 
-import img1 from "../../assets/images/Z (19).jpeg";
+import img1 from "../../assets/images/2Q== (11).jpeg";
 
 
-class BellaCassaHotelSection extends React.Component{
- 
+class SinkorPalaceSection extends React.Component{
+
     render(){
 
         return(
+
             <>
             <div className="mt-20 flex flex-col justify-evenly gap-8 bg-white px-4 sm:px-6 md:mx-20 md:mt-28 md:flex-row md:gap-10 md:px-0">
                                   <div className="mx-auto w-full max-w-2xl bg-white md:mx-2 md:mt-0 md:max-w-lg">
@@ -40,14 +41,14 @@ class BellaCassaHotelSection extends React.Component{
                                   <div className="w-full max-w-lg bg-white">
                                     <div className="mx-auto h-auto w-full border-none bg-white px-1 md:mx-5 md:h-96 md:w-96 md:px-0 md:shadow-none">
                                       <h1 className="text-left font-sans text-2xl capitalize font-semibold  my-2">
-                                        bella cassa hotel
+                                        sinkor palace hotel
                                       </h1>
                                       <p className="text-left font-sans py-3  text-sm capitalize">
                                         <FontAwesomeIcon
                                           icon={faLocationDot}
                                           className="mr-2 text-black"
                                         />
-                                        : 3 street sinkor <br /> monrovia, liberia
+                                        : congo town <br /> monrovia, liberia
                                       </p>
                                       {/* contact */}
                                       <p className="text-left font-sans py-2 text-sm capitalize">
@@ -73,9 +74,10 @@ class BellaCassaHotelSection extends React.Component{
                                     </div>
                                   </div>
                                 </div>
+
             </>
         );
     }
 }
 
-export default BellaCassaHotelSection;
+export default SinkorPalaceSection;

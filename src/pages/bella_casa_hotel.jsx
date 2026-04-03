@@ -1,15 +1,17 @@
 import React from "react";
 import NavBar from "../components/Content/nav";
+import BellaCassaHotelSection from "../components/Content/bella_cassa_hotel_section";
+import BellaCassaAbout from "../components/Content/bella_cassa_about";
 
 class BellaCasaHotel extends React.Component {
   render() {
     return (
       <>
         <NavBar />
-        <div className="px-6 py-10">
-          <h1 className="text-2xl font-semibold">Bella Casa Hotel</h1>
-        </div>
-      </>
+              
+        <BellaCassaHotelSection/>
+        <BellaCassaAbout/>
+        </>
     );
   }
 }

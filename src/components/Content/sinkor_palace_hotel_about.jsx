@@ -1,7 +1,7 @@
 import React from "react";
 import RoomSuites from "./suites";
 
-import img1 from "../../assets/images/Z (19).jpeg";
+import img1 from "../../assets/images/2Q== (11).jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCar,
@@ -9,13 +9,14 @@ import {
   faWifiStrong,
 } from "@fortawesome/free-solid-svg-icons";
 
-class BellaCassaHotelAbout extends React.Component{
+
+class SinkorPalaceAbout extends React.Component{
 
     render(){
 
         return(
             <>
-             <div className="bg-white flex flex-col md:flex-row justify-evenly gap-6 md:gap-8 px-4 sm:px-6 md:px-0 py-6 md:py-0">
+            <div className="bg-white flex flex-col md:flex-row justify-evenly gap-6 md:gap-8 px-4 sm:px-6 md:px-0 py-6 md:py-0">
                       <div className="w-full md:w-1/2 max-w-2xl mx-auto md:mx-0">
                         <h1 className="text-2xl font-sans capitalize mx-2 sm:mx-6 md:mx-20 md:py-3 font-semibold text-left">
                           about us
@@ -79,4 +80,4 @@ class BellaCassaHotelAbout extends React.Component{
     }
 }
 
-export default BellaCassaHotelAbout;
+export default SinkorPalaceAbout;
