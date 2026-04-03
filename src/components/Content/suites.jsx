@@ -15,21 +15,21 @@ class RoomSuites extends React.Component{
                     room &amp; suites
                 </h1>
             </div>
-    <div className="h-96 md:justify-center flex flex-wrap md:gap-8 gap-20 justify-evenly md:mt-16">
-        <div className="w-auto">
-            <img src={img1} alt="family bed" srcset="" />
+    <div className="mt-8 flex flex-col items-center justify-evenly gap-10 px-4 sm:px-6 md:mt-16 md:h-96 md:flex-row md:flex-wrap md:justify-center md:gap-8 md:px-0">
+        <div className="w-full max-w-sm md:w-72 md:max-w-none">
+            <img src={img1} alt="family bed" className="h-56 w-full object-cover sm:h-64 md:h-44" />
             <div className="flex flex justify-center py-3 capitalize font-sans">
                 family bed
             </div>
         </div>
-        <div className="w-auto">
-            <img src={img2} alt="single bed" srcset="" />
+        <div className="w-full max-w-sm md:w-72 md:max-w-none">
+            <img src={img2} alt="single bed" className="h-56 w-full object-cover sm:h-64 md:h-44" />
             <div className="flex flex justify-center py-3 capitalize font-sans">
                 single bed
             </div>
         </div>
-        <div className="w-auto">
-            <img src={img3} alt="Double Bed" srcset="" className="md:h-44 w-66 md:w-66" />
+        <div className="w-full max-w-sm md:w-72 md:max-w-none">
+            <img src={img3} alt="Double Bed" className="h-56 w-full object-cover sm:h-64 md:h-44" />
             <div className="flex flex justify-center py-3 capitalize font-sans">
                 double bed
             </div>

@@ -19,27 +19,27 @@ class CoronaHotelSection extends React.Component{
         return(
 
             <>
-             <div className="flex flex-wrap justify-evenly bg-white md:gap-10 h-auto md:mt-28 md:mx-20  mt-2">
-                      <div className="md:w-lg mx-2 mt-14 md:mt-0 bg-white">
+             <div className="mt-20 flex flex-col justify-evenly gap-8 bg-white px-4 sm:px-6 md:mx-20 md:mt-28 md:flex-row md:gap-10 md:px-0">
+                      <div className="mx-auto w-full max-w-2xl bg-white md:mx-2 md:mt-0 md:max-w-lg">
                         <img
                           src={img1}
                           alt="royal grand hotel"
-                          className="md:h-96 md:w-auto h-auto w-xl object-cover rounded-none"
+                          className="h-64 w-full object-cover rounded-none sm:h-80 md:h-96 md:w-auto"
                         />
-                        <div className="flex flex-wrap justify-start md:my-10 md:gap-2 gap-4 my-5">
-                          <div className="w-28">
-                            <img src={img2} alt="" className="h-20 md:rounded-none w-40" />
+                        <div className="my-5 flex flex-wrap justify-start gap-4 md:my-10 md:gap-2">
+                          <div className="w-[30%] min-w-24 sm:w-28">
+                            <img src={img2} alt="" className="h-20 w-full object-cover md:rounded-none" />
                           </div>
-                          <div className="w-28">
-                            <img src={img3} alt="" className="h-20 md:rounded-none w-40" />
+                          <div className="w-[30%] min-w-24 sm:w-28">
+                            <img src={img3} alt="" className="h-20 w-full object-cover md:rounded-none" />
                           </div>
-                          <div className="w-28">
-                            <img src={img4} alt="" className="h-20 md:rounded-none w-40" />
+                          <div className="w-[30%] min-w-24 sm:w-28">
+                            <img src={img4} alt="" className="h-20 w-full object-cover md:rounded-none" />
                           </div>
                         </div>
                       </div>
-                      <div className="w-lg bg-white">
-                        <div className="border-none mx-5  md:border-gray-500 h-96 w-96  md:shadow-none bg-white">
+                      <div className="w-full max-w-lg bg-white">
+                        <div className="mx-auto h-auto w-full border-none bg-white px-1 md:mx-5 md:h-96 md:w-96 md:px-0 md:shadow-none">
                           <h1 className="text-left font-sans text-2xl capitalize font-semibold  my-2">
                             corona hotel
                           </h1>
@@ -63,7 +63,7 @@ class CoronaHotelSection extends React.Component{
                             <FontAwesomeIcon icon={faBed} className="mr-2 text-black" />:
                             150 bed rooms
                           </p>
-                          <div className=" md:mt-8 my-2 flex flex-wrap justify-start">
+                          <div className="my-2 flex flex-wrap justify-start md:mt-8">
                             <a
                               href="#"
                               className="px-8 py-3 font-semibold text-lg uppercase rounded-none bg-amber-500"

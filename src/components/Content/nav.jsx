@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
   render() {
@@ -6,8 +7,8 @@ class NavBar extends React.Component {
       <>
         <nav class="bg-gray-50 md:bg-white fixed w-full z-20 top-0 inset-s-0 border-b-none  border-b-neutral-secondary-medium border-default">
           <div class="max-w-7xl  flex flex-wrap items-center justify-between mx-auto p-3">
-            <a
-              href="https://flowbite.com/"
+            <Link
+              to="/"
               class="flex items-center space-x-3 rtl:space-x-reverse"
             >
               {/* <img
@@ -18,7 +19,7 @@ class NavBar extends React.Component {
               <span class="self-center text-lg text-heading font-normal md:mx-20 mx-2 whitespace-nowrap uppercase m">
                 luxx
               </span>
-            </a>
+            </Link>
             <div class="inline-flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
               <button
                 type="button"
@@ -58,13 +59,13 @@ class NavBar extends React.Component {
             >
               <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border-none border-default rounded-none bg-white md:bg-white md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     class="block py-2 px-3 text-heading bg-transparent border-0 rounded-none md:text-black md:p-0 md:bg-transparent"
                     aria-current="page"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a

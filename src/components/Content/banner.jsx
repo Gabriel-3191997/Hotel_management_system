@@ -5,14 +5,14 @@ class Banner extends React.Component {
   render() {
     return (
       <>
-        <div className="flex flex-wrap justify-center items-center bg-white  md:gap-0 gap-8">
-          <div className="w-xl md:h-96 h-auto bg-white">
-            <h1 className="md:text-5xl text-4xl md:mx-0 mx-5 md:mt-10 mt-28 font-sans font-medium uppercase">
+        <div className="flex flex-col items-center justify-center gap-8 bg-white px-4 pt-24 pb-6 sm:px-6 md:flex-row md:gap-0 md:px-8 md:pt-0 md:pb-0">
+          <div className="w-full max-w-xl bg-white md:h-96">
+            <h1 className="mx-1 mt-2 text-4xl font-sans font-medium uppercase sm:mx-3 md:mx-0 md:mt-10 md:text-5xl">
               {/* <span className="text-sm">live</span>
               <br /> */}
               live in luxury <br /> with comfort &amp; style
             </h1>
-            <p className="font-sans front-normal md:mt-3 md:w-lg mx-5 md:mx-0 py-2">
+            <p className="mx-1 py-2 font-sans front-normal sm:mx-3 md:mt-3 md:mx-0 md:max-w-lg">
               Eleifend et natoque quibusdam vivamus aute, labore labore, natus
               accusamus, laboris! Nunc, dui occaecati ante, pariatur.
               {/* Lobortis.Occaecat quasi dignissimos fugiat fringilla! Curabitur
@@ -21,7 +21,7 @@ class Banner extends React.Component {
               Adipiscing! Voluptatibus! */}
             </p>
             <br />
-            <div className="md:py-1 py-0 md:mx-0 mx-5">
+            <div className="mx-1 py-0 sm:mx-3 md:mx-0 md:py-1">
               <a
                 href="#discover"
                 className="bg-amber-500 text-md rounded-sm cursor-pointer hover:bg-amber-400 font-sans px-8 py-3 capitalize"
@@ -31,8 +31,8 @@ class Banner extends React.Component {
             </div>
           </div>
           {/* carousel image */}
-          <div className="w-lg bg-white h-96 md:mt-32">
-            <div className="md:w-lg w-auto mx-2 bg-white md:h-96 h-80 rounded">
+          <div className="h-auto w-full max-w-lg bg-white md:mt-32">
+            <div className="mx-auto w-full rounded bg-white md:max-w-lg">
               <DemoCarousel />
               {/* <img src={image1} alt="" className="w-full h-full rounded" /> */}
             </div>
