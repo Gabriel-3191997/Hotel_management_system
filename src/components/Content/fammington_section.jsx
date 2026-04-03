@@ -1,6 +1,6 @@
 import React from "react";
 
-class FammingtonSection extends React.Component{
+class FammingtonAbout extends React.Component{
 
     render(){
 
@@ -10,4 +10,4 @@ class FammingtonSection extends React.Component{
     }
 }
 
-export default FammingtonSection;
+export default FammingtonAbout;
