@@ -1,15 +1,16 @@
 import React from "react";
 import NavBar from "../components/Content/nav";
+import Fammington_Hotel_Section from "../components/Content/fammington_hotel_section";
+import FammingtonAbout from  "../components/Content/fammington_section";
 
 class FammingtonHotel extends React.Component {
   render() {
     return (
       <>
         <NavBar />
-        <div className="px-6 py-10">
-          <h1 className="text-2xl font-semibold">Fammington Hotel</h1>
-        </div>
-      </>
+        <Fammington_Hotel_Section/>      
+        <FammingtonAbout/>
+        </>
     );
   }
 }
