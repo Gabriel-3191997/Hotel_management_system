@@ -20,13 +20,14 @@ class NavBar extends React.Component {
                 luxx
               </span>
             </Link>
+            {/* login button */}
             <div class="inline-flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              <button
-                type="button"
+              <Link
+                to="/login"
                 class="text-white rounded-sm bg-blue-700 cursor-pointer md:mx-20 hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5  text-sm px-8 py-2 focus:outline-none capitalize"
               >
                 login
-              </button>
+              </Link>
               <button
                 data-collapse-toggle="navbar-cta"
                 type="button"

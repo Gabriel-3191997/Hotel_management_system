@@ -14,6 +14,7 @@ import BoluvardHotelBooking from "./components/Bookings/components/boluvard_hote
 import BellaCassaHotelBooking from "./components/Bookings/components/bella_cassa_hotel";
 import SinkorPalaceHotelBooking from "./components/Bookings/components/sinkor_palace_hotel";
 import FammingtonHotelBooking from "./components/Bookings/fammington_hotel";
+import LoginForm from "./components/Auth/Login/login";
 
 class App extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class App extends React.Component {
           <Route path="/bella-casa-hotel" element={<BellaCasaHotel />} />
           <Route path="/sinkor-palace-hotel" element={<SinkorPalaceHotel />} />
           <Route path="/fammington-hotel" element={<FammingtonHotel />} />
+          <Route path="/login" element={<LoginForm />} />
           <Route path="/bookings/royal-grand-hotel" element={<RoyalGrandBooking />} />
           <Route path="/bookings/corona-hotel" element={<CoronaHotelBooking />} />
           <Route path="/bookings/boluvard-palace" element={<BoluvardHotelBooking />} />
