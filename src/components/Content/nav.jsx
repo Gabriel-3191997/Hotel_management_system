@@ -31,7 +31,7 @@ class NavBar extends React.Component {
               <button
                 data-collapse-toggle="navbar-cta"
                 type="button"
-                class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-body bg-gray-50 md:bg-white border-0 rounded-base md:hidden hover:bg-white hover:text-heading focus:outline-none focus:ring-0 focus:ring-transparent"
+                class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-body bg-white md:bg-white border-0 rounded-base md:hidden hover:bg-white hover:text-heading focus:outline-none focus:ring-0 focus:ring-transparent"
                 aria-controls="navbar-cta"
                 aria-expanded="false"
               >
