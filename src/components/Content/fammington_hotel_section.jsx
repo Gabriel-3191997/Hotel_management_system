@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
@@ -63,12 +64,12 @@ class Fammington_Hotel_Section extends React.Component{
                                                     20 bed rooms
                                                   </p>
                                                   <div className="my-2 flex flex-wrap justify-start md:mt-8">
-                                                    <a
-                                                      href="#"
+                                                    <Link
+                                                      to="/bookings/fammington-hotel"
                                                       className="px-8 py-3 font-semibold text-lg uppercase rounded-none bg-amber-500"
                                                     >
                                                       book now
-                                                    </a>
+                                                    </Link>
                                                   </div>
                                                 </div>
                                               </div>
