@@ -12,7 +12,10 @@ class Discover extends React.Component {
   render() {
     return (
       <>
-        <div className="bg-white h-auto md:mb-20 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8" id="discover">
+        <div
+          className="bg-white h-auto md:mb-20 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
+          id="discover"
+        >
           <div className="bg-white flex flex-wrap items-center justify-between gap-2">
             <div className="w-auto bg-white">
               {/* <h1 className="text-3xl font-semibold  mx-3 py-10 text-left md:mx-14 font-sans capitalize md:mt-8">
@@ -24,7 +27,7 @@ class Discover extends React.Component {
                 <FontAwesomeIcon icon={faFilter} className="text-lg mx-0" />
 
                 <span className="text-sm font-normal">
-                  <select name="option" id="option">
+                  <select name="option" id="option" className="border-none">
                     <option value="Prices">Sort prices</option>
                     <option value=" High">High</option>
                     <option value="Lowest">Lowest</option>
@@ -254,7 +257,8 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/sinkor-palace-hotel">sinkor palace hotel</Link> <br />
+                <Link to="/sinkor-palace-hotel">sinkor palace hotel</Link>{" "}
+                <br />
                 <span className="font-sans font-normal text-sm">
                   congo town
                 </span>
