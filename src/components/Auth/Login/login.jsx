@@ -1,9 +1,11 @@
 import React from "react";
+import NavBar from "../../Content/nav";
 
 class LoginForm extends React.Component {
   render() {
     return (
       <>
+        <NavBar />
         <form class="max-w-sm mx-auto">
           <div class="mb-6">
             <label
