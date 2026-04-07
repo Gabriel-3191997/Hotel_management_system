@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../../Content/nav";
+import NavBar from "../Content/nav";
 
 class BellaCassaHotelBooking extends React.Component {
   render() {

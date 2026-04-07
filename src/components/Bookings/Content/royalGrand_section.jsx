@@ -7,11 +7,11 @@ import {
   faLocationDot,
   faSnowflake,
 } from "@fortawesome/free-solid-svg-icons";
-import img2 from "../../assets/images/Z (18).jpeg";
-import img3 from "../../assets/images/9k= (18).jpeg";
-import img4 from "../../assets/images/Z (16).jpeg";
+import img2 from "../../../assets/images/Z (18).jpeg";
+import img3 from "../../../assets/images/9k= (18).jpeg";
+import img4 from "../../../assets/images/Z (16).jpeg";
 
-import img1 from "../../assets/images/Z (6).jpeg";
+import img1 from "../../../assets/images/Z (6).jpeg";
 class RoyalGrandSection extends React.Component {
   render() {
     return (

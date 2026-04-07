@@ -13,8 +13,12 @@ import CoronaHotelBooking from "./components/Bookings/components/coronal_hotel_b
 import BoluvardHotelBooking from "./components/Bookings/components/boluvard_hotel";
 import BellaCassaHotelBooking from "./components/Bookings/components/bella_cassa_hotel";
 import SinkorPalaceHotelBooking from "./components/Bookings/components/sinkor_palace_hotel";
-import FammingtonHotelBooking from "./components/Bookings/fammington_hotel";
+import FammingtonHotelBooking from "./components/Bookings/pages/fammington_hotel";
 import LoginForm from "./components/Auth/Login/login";
+import AuthCode from "./components/Auth/Login/2_factors_auth";
+import ForgotPassword from "./components/Auth/Login/forget_password";
+import SignupForm from "./components/Auth/Login/Signup/signup";
+import BookingHomePage from "./components/Bookings/pages/home";
 
 class App extends React.Component {
   render() {
@@ -29,6 +33,10 @@ class App extends React.Component {
           <Route path="/sinkor-palace-hotel" element={<SinkorPalaceHotel />} />
           <Route path="/fammington-hotel" element={<FammingtonHotel />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/two-factor-auth" element={<AuthCode />} />
+          <Route path="/forget-password" element={<ForgotPassword />} />
+          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/bookings" element={<BookingHomePage />} />
           <Route path="/bookings/royal-grand-hotel" element={<RoyalGrandBooking />} />
           <Route path="/bookings/corona-hotel" element={<CoronaHotelBooking />} />
           <Route path="/bookings/boluvard-palace" element={<BoluvardHotelBooking />} />

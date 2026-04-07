@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import NavBar from "../../Content/nav";
+import NavBar from "../Content/nav";
 import img1 from "../../../assets/images/Z (6).jpeg";
 
 class RoyalGrandBooking extends React.Component {
@@ -25,7 +25,7 @@ class RoyalGrandBooking extends React.Component {
           <div className="w-full max-w-xl"></div>
           {/* booking form */}
           <div className="flex w-full max-w-xl justify-center">
-            <div className="min-h-128 w-full max-w-sm bg-white md:shadow-sm">
+            <div className="min-h-150 w-full max-w-sm bg-white md:shadow-sm">
               <div className="mt-3 flex items-start justify-center gap-4 px-3">
                 <div className="shrink-0">
                   <img

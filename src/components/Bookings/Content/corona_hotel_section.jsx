@@ -6,14 +6,14 @@ import {
   faLocationDot,
   faSnowflake,
 } from "@fortawesome/free-solid-svg-icons";
-import img2 from "../../assets/images/Z (18).jpeg";
-import img3 from "../../assets/images/9k= (18).jpeg";
-import img4 from "../../assets/images/Z (16).jpeg";
+import img2 from "../../../assets/images/Z (18).jpeg";
+import img3 from "../../../assets/images/9k= (18).jpeg";
+import img4 from "../../../assets/images/Z (16).jpeg";
 
-import img1 from "../../assets/images/2Q== (12).jpeg";
+import img1 from "../../../assets/images/9k= (9).jpeg";
 
 
-class BoluvardHotelSection extends React.Component{
+class CoronaHotelSection extends React.Component{
 
     render(){
 
@@ -42,14 +42,14 @@ class BoluvardHotelSection extends React.Component{
                       <div className="w-full max-w-lg bg-white">
                         <div className="mx-auto h-auto w-full border-none bg-white px-1 md:mx-5 md:h-96 md:w-96 md:px-0 md:shadow-none">
                           <h1 className="text-left font-sans text-2xl capitalize font-semibold  my-2">
-                            boluvard hotel
+                            corona hotel
                           </h1>
                           <p className="text-left font-sans py-3  text-sm capitalize">
                             <FontAwesomeIcon
                               icon={faLocationDot}
                               className="mr-2 text-black"
                             />
-                            : 12 street sinkor <br /> monrovia, liberia
+                            : 24 street sinkor <br /> monrovia, liberia
                           </p>
                           {/* contact */}
                           <p className="text-left font-sans py-2 text-sm capitalize">
@@ -75,10 +75,9 @@ class BoluvardHotelSection extends React.Component{
                         </div>
                       </div>
                     </div>
-            
             </>
         );
     }
 }
 
-export default BoluvardHotelSection;
+export default CoronaHotelSection;

@@ -1,7 +1,7 @@
 import React from "react";
-import img1 from "../../assets/images/2Q== (18).jpeg";
-import img2 from "../../assets/images/Z (17).jpeg";
-import img3 from "../../assets/images/Z (18).jpeg";
+import img1 from "../../../assets/images/2Q== (18).jpeg";
+import img2 from "../../../assets/images/Z (17).jpeg";
+import img3 from "../../../assets/images/Z (18).jpeg";
 import Footer from "./footer";
 
 class RoomSuites extends React.Component {
