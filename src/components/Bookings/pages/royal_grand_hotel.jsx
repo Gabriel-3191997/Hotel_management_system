@@ -8,7 +8,7 @@ class RoyalGrandHotel extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        {!this.props.hideNavBar && <NavBar />}
         <RoyalGrandSection />
         <AboutUs />
       </>

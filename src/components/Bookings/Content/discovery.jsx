@@ -46,7 +46,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/royal-grand-hotel">royal grand hotel</Link> <br />
+                <Link to="/bookings/hotels/royal-grand-hotel">royal grand hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   12 Street Sinkor
                 </span>
@@ -93,7 +93,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/corona-hotel">corona hotel</Link> <br />
+                <Link to="/bookings/hotels/corona-hotel">corona hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   24 Street Sinkor
                 </span>
@@ -138,7 +138,7 @@ class Discover extends React.Component {
                 className="object-cover w-full h-52 sm:h-56 md:h-60"
               />
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/boluvard-palace">boluvard palace</Link> <br />
+                <Link to="/bookings/hotels/boluvard-palace">boluvard palace</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   12 Street Sinkor
                 </span>
@@ -210,7 +210,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/bella-casa-hotel">bella casa</Link> <br />
+                <Link to="/bookings/hotels/bella-casa-hotel">bella casa</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   3rd Street Sinkor
                 </span>
@@ -257,7 +257,7 @@ class Discover extends React.Component {
                 />
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/sinkor-palace-hotel">sinkor palace hotel</Link>{" "}
+                <Link to="/bookings/hotels/sinkor-palace-hotel">sinkor palace hotel</Link>{" "}
                 <br />
                 <span className="font-sans font-normal text-sm">
                   congo town
@@ -303,7 +303,7 @@ class Discover extends React.Component {
                 className="object-cover w-full h-52 sm:h-56 md:h-60"
               />
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
-                <Link to="/fammington-hotel">fammington hotel</Link> <br />
+                <Link to="/bookings/hotels/fammington-hotel">fammington hotel</Link> <br />
                 <span className="font-sans font-normal text-sm">
                   12 Street Sinkor
                 </span>

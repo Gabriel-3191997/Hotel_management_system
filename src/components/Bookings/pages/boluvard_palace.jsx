@@ -7,7 +7,7 @@ class BoluvardPalaceHotel extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        {!this.props.hideNavBar && <NavBar />}
         <BoluvardHotelSection/>
        <BouluvardHotelAbout/>
       </>

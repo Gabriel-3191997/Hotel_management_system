@@ -7,7 +7,7 @@ class SinkorPalaceHotel extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        {!this.props.hideNavBar && <NavBar />}
 
         <SinkorPalaceSection />
         <SinkorPalaceAbout />

@@ -7,7 +7,7 @@ class FammingtonHotel extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        {!this.props.hideNavBar && <NavBar />}
         <Fammington_Hotel_Section />
         <FammingtonAbout />
       </>

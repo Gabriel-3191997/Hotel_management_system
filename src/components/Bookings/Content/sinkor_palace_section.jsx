@@ -66,7 +66,7 @@ class SinkorPalaceSection extends React.Component{
                                       </p>
                                       <div className="my-2 flex flex-wrap justify-start md:mt-8">
                                         <Link
-                                          to="/"
+                                          to="/bookings/sinkor-palace-hotel"
                                           className="px-8 py-3 font-semibold text-lg uppercase rounded-none bg-amber-500"
                                         >
                                           book now
