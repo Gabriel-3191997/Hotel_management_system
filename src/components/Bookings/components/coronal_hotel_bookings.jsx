@@ -37,7 +37,7 @@ class CoronaHotelBooking extends React.Component {
             back
           </Link>
         </div>
-        <div className="flex flex-wrap justify-evenly mt-20 bg-white h-auto">
+        <div className="flex flex-wrap justify-evenly mt-5 bg-white h-auto">
           <div className="md:w-auto">
             <img src={img1} alt="" srcSet="" className="w-lg" />
             <div className="md:py-8 md:mx-0 mx-3">
