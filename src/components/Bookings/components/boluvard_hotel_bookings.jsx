@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
@@ -28,6 +29,14 @@ class BoluvardHotelBooking extends React.Component {
       <>
         <NavBar />
         {/* <BottomNav /> */}
+        <div className="mx-3 bg-white mt-6 md:mt-20 lg:mx-44">
+          <Link
+            to="/bookings"
+            className="text-left font-sans text-sm font-medium capitalize text-blue-700"
+          >
+            back to hotels
+          </Link>
+        </div>
         <div className="flex flex-wrap justify-evenly mt-20 bg-white h-auto">
           <div className="md:w-auto">
             <img src={img1} alt="" srcSet="" className="w-lg" />
