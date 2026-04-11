@@ -90,7 +90,7 @@ class AuthCode extends React.Component {
                 />
               </div>
               {this.state.errors.code && (
-                <p className="mt-3 text-sm text-red-600">{this.state.errors.code}</p>
+                <p className="mt-3 text-sm text-red-500">{this.state.errors.code}</p>
               )}
               <div className="mt-8 space-y-4">
                 <button

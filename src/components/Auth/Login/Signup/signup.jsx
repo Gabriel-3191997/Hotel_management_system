@@ -65,7 +65,7 @@ class SignupForm extends React.Component {
                   required
                 />
                 {this.state.errors.fullname && (
-                  <p className="text-sm text-red-600">{this.state.errors.fullname}</p>
+                  <p className="text-sm text-red-500">{this.state.errors.fullname}</p>
                 )}
                 <input
                   type="email"
@@ -75,7 +75,7 @@ class SignupForm extends React.Component {
                   required
                 />
                 {this.state.errors.email && (
-                  <p className="text-sm text-red-600">{this.state.errors.email}</p>
+                  <p className="text-sm text-red-500">{this.state.errors.email}</p>
                 )}
                 <input
                   type="password"
@@ -86,7 +86,7 @@ class SignupForm extends React.Component {
                   required
                 />
                 {this.state.errors.password && (
-                  <p className="text-sm text-red-600">{this.state.errors.password}</p>
+                  <p className="text-sm text-red-500">{this.state.errors.password}</p>
                 )}
                 <p className="text-left font-sans text-md font-normal">
                   Already have an account?

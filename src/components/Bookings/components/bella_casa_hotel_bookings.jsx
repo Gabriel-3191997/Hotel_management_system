@@ -22,7 +22,41 @@ class BellaCassaHotelBooking extends React.Component {
   state = {
     checkIn: null,
     checkOut: null,
+    errors: {},
   };
+
+  handleSubmit = (event) => {
+    const formData = new FormData(event.currentTarget);
+    const adult = formData.get("adult")?.toString().trim() || "";
+    const children = formData.get("children")?.toString().trim() || "";
+    const rooms = formData.get("rooms")?.toString().trim() || "";
+    const paymentNumber = formData.get("paymentNumber")?.toString().trim() || "";
+    const errors = {};
+
+    if (!this.state.checkIn) errors.checkIn = "Check in date is required.";
+    if (!this.state.checkOut) errors.checkOut = "Check out date is required.";
+    if (!adult || Number(adult) < 1) errors.adult = "At least 1 adult is required.";
+    if (children && Number(children) < 0) errors.children = "Children cannot be negative.";
+    if (!rooms || Number(rooms) < 1) errors.rooms = "At least 1 room is required.";
+    if (!paymentNumber) {
+      errors.paymentNumber = "Payment number is required.";
+    } else if (paymentNumber.length < 5) {
+      errors.paymentNumber = "Payment number must be at least 5 digits.";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      event.preventDefault();
+      this.setState({ errors });
+      return;
+    }
+
+    this.setState({ errors: {} });
+  };
+
+  renderError = (fieldName) =>
+    this.state.errors[fieldName] ? (
+      <p className="mt-2 text-sm text-red-500">{this.state.errors[fieldName]}</p>
+    ) : null;
 
   render() {
     return (
@@ -109,7 +143,7 @@ class BellaCassaHotelBooking extends React.Component {
                       </ul>
                     </div>
                   </div>
-                  <form action="/bookings/submission" method="GET">
+                  <form action="/bookings/submission" method="GET" onSubmit={this.handleSubmit}>
                     <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
                       availability
                     </h3>
@@ -136,6 +170,7 @@ class BellaCassaHotelBooking extends React.Component {
                             className="w-full border-none bg-gray-50 text-sm outline-none"
                           />
                         </div>
+                        {this.renderError("checkIn")}
                       </div>
                       {/* check out */}
                       <div className="w-36">
@@ -158,6 +193,7 @@ class BellaCassaHotelBooking extends React.Component {
                             className="w-full border-none bg-gray-50 text-sm outline-none"
                           />
                         </div>
+                        {this.renderError("checkOut")}
                       </div>
                     </div>
                     <div className="mx-3 flex flex-wrap justify-between gap-5 bg-white md:mx-5">
@@ -175,6 +211,7 @@ class BellaCassaHotelBooking extends React.Component {
                           placeholder="0"
                           className="w-28 border-none bg-gray-50"
                         />
+                        {this.renderError("adult")}
                       </div>
                       <div className="w-32">
                         {/* <h3 className="text-sm font-sans capitalize font-semibold">
@@ -189,6 +226,7 @@ class BellaCassaHotelBooking extends React.Component {
                           placeholder="0"
                           className="w-28 border-none bg-gray-50"
                         />
+                        {this.renderError("children")}
                       </div>
                     </div>
                     <br />
@@ -221,6 +259,7 @@ class BellaCassaHotelBooking extends React.Component {
                           placeholder="0"
                           className="w-28 border-none bg-gray-50"
                         />
+                        {this.renderError("rooms")}
                       </div>
                     </div>
                     {/* payment method */}
@@ -234,6 +273,7 @@ class BellaCassaHotelBooking extends React.Component {
                           className="mx-3 w-50 bg-gray-50"
                           placeholder=" xxxxx"
                         />
+                        <div className="mx-3">{this.renderError("paymentNumber")}</div>
                       </div>
                       <p className="mx-3 font-sans text-sm capitalize">
                         <span className="text-red-700">*</span>we accept payment

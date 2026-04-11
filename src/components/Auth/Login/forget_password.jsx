@@ -63,7 +63,7 @@ class ForgotPassword extends React.Component {
                   required
                 />
                 {this.state.errors.email && (
-                  <p className="text-sm text-red-600">{this.state.errors.email}</p>
+                  <p className="text-sm text-red-500">{this.state.errors.email}</p>
                 )}
                 <p className="text-left font-sans text-md font-normal">
                   Remember your password?

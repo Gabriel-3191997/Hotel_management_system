@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
                   required
                 />
                 {this.state.errors.username && (
-                  <p className="text-sm text-red-600">{this.state.errors.username}</p>
+                  <p className="text-sm text-red-500">{this.state.errors.username}</p>
                 )}
                 <input
                   type="password"
@@ -79,7 +79,7 @@ class LoginForm extends React.Component {
                   required
                 />
                 {this.state.errors.password && (
-                  <p className="text-sm text-red-600">{this.state.errors.password}</p>
+                  <p className="text-sm text-red-500">{this.state.errors.password}</p>
                 )}
                 <div className="bg-white">
                   <p className="text-left font-sans font-normal text-md">
