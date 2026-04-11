@@ -9,7 +9,7 @@ import {
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NavBar from "../Content/nav";
-import img1 from "../../../assets/images/2Q== (9).jpeg";
+import img1 from "../../../assets/images/2Q== (24).jpeg";
 import img2 from "../../../assets/images/Z (18).jpeg";
 import img3 from "../../../assets/images/9k= (18).jpeg";
 import img4 from "../../../assets/images/Z (16).jpeg";
@@ -17,7 +17,7 @@ import img4 from "../../../assets/images/Z (16).jpeg";
 import Suites from "../Content/suites";
 // import BottomNav from "../Content/bottom_nav";
 
-class FammingtonHotelBooking extends React.Component {
+class BellaCassaHotelBooking extends React.Component {
   state = {
     checkIn: null,
     checkOut: null,
@@ -73,7 +73,7 @@ class FammingtonHotelBooking extends React.Component {
                     </div>
                     <div className="min-w-0 flex-1">
                       <h1 className="text-left font-sans text-lg font-semibold capitalize">
-                        fammington hotel
+                        bella cassa hotel
                       </h1>
                       <ul className="list-none py-3 text-sm leading-6">
                         <li>
@@ -81,7 +81,7 @@ class FammingtonHotelBooking extends React.Component {
                             icon={faLocationDot}
                             className="mr-2 text-black"
                           />
-                          margibi county
+                          3rd street, sinkor
                         </li>
                         <li>
                           <FontAwesomeIcon
@@ -235,4 +235,4 @@ class FammingtonHotelBooking extends React.Component {
   }
 }
 
-export default FammingtonHotelBooking;
+export default BellaCassaHotelBooking;
