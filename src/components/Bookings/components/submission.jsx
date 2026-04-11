@@ -11,7 +11,7 @@ class FormSubmission extends React.Component {
         <div className="flex flex-wrap justify-center md:mt-20 bg-white h-auto">
           <h1 className="flex items-center gap-2 text-xl font-sans capitalize font-semibold text-center">
             <FontAwesomeIcon icon={faCircleCheck} className="text-green-600" />
-            sucessful
+            sucessfull
           </h1>
         </div>
       </>
