@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import PageLoader from "./components/page_loader";
 import HomePage from "./pages/home";
 import RoyalGrandHotel from "./pages/royal_grand_hotel";
 import CoronaHotel from "./pages/corona_hotel";
@@ -28,7 +29,25 @@ import BookingSinkorPalaceHotel from "./components/Bookings/pages/sinkor_palace"
 import BookingFammingtonHotel from "./components/Bookings/pages/fammington_hotel";
 
 class App extends React.Component {
+  state = {
+    isLoading: true,
+  };
+
+  componentDidMount() {
+    this.loaderTimeout = window.setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 5000);
+  }
+
+  componentWillUnmount() {
+    window.clearTimeout(this.loaderTimeout);
+  }
+
   render() {
+    if (this.state.isLoading) {
+      return <PageLoader />;
+    }
+
     return (
       <>
         <Routes>
