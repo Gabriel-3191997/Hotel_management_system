@@ -130,6 +130,7 @@ class BellaCassaHotelBooking extends React.Component {
                             onChange={(date) =>
                               this.setState({ checkIn: date })
                             }
+                            required
                             placeholderText="check in"
                             minDate={new Date()}
                             className="w-full border-none bg-gray-50 text-sm outline-none"
@@ -151,6 +152,7 @@ class BellaCassaHotelBooking extends React.Component {
                             onChange={(date) =>
                               this.setState({ checkOut: date })
                             }
+                            required
                             placeholderText="check out"
                             minDate={this.state.checkIn || new Date()}
                             className="w-full border-none bg-gray-50 text-sm outline-none"
@@ -167,6 +169,9 @@ class BellaCassaHotelBooking extends React.Component {
                         <p className="font-sans text-sm capitalize">adult</p>
                         <input
                           type="number"
+                          name="adult"
+                          min="1"
+                          required
                           placeholder="0"
                           className="w-28 border-none bg-gray-50"
                         />
@@ -179,6 +184,8 @@ class BellaCassaHotelBooking extends React.Component {
                         <p className="font-sans text-sm capitalize">children</p>
                         <input
                           type="number"
+                          name="children"
+                          min="0"
                           placeholder="0"
                           className="w-28 border-none bg-gray-50"
                         />
@@ -193,7 +200,10 @@ class BellaCassaHotelBooking extends React.Component {
                         </h3>
                         <br />
                         <p className="font-sans text-sm capitalize">suites</p>
-                        <select className="w-28 border-none bg-gray-50 text-sm capitalize">
+                        <select
+                          name="suite"
+                          className="w-28 border-none bg-gray-50 text-sm capitalize"
+                        >
                           <option value="none">None</option>
                           <option value="family">Family</option>
                           <option value="single">Single</option>
@@ -205,6 +215,9 @@ class BellaCassaHotelBooking extends React.Component {
                         <p className="font-sans text-sm capitalize">rooms</p>
                         <input
                           type="number"
+                          name="rooms"
+                          min="1"
+                          required
                           placeholder="0"
                           className="w-28 border-none bg-gray-50"
                         />
@@ -215,6 +228,9 @@ class BellaCassaHotelBooking extends React.Component {
                       <div className="bg-white py-3">
                         <input
                           type="tel"
+                          name="paymentNumber"
+                          minLength="5"
+                          required
                           className="mx-3 w-50 bg-gray-50"
                           placeholder=" xxxxx"
                         />
@@ -228,7 +244,7 @@ class BellaCassaHotelBooking extends React.Component {
                     <div className="mx-3 py-3 md:mx-3">
                       <button
                         type="submit"
-                        className="bg-amber-500 px-8 py-2 font-sans text-md font-medium capitalize"
+                        className="cursor-pointer bg-amber-500 px-8 py-2 font-sans text-md font-medium capitalize"
                       >
                         book now
                       </button>

@@ -5,12 +5,35 @@ import NavBar from "../../Content/nav";
 class ForgotPassword extends React.Component {
   state = {
     redirectToTwoFactor: false,
+    errors: {},
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({ redirectToTwoFactor: true });
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get("email")?.toString().trim() || "";
+    const errors = {};
+
+    if (!email) {
+      errors.email = "Email address is required.";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Enter a valid email address.";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      this.setState({ errors });
+      return;
+    }
+
+    this.setState({ errors: {}, redirectToTwoFactor: true });
   };
+
+  getInputClass = (fieldName) =>
+    `w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none ${
+      this.state.errors[fieldName]
+        ? "border-red-500 text-red-900 placeholder-red-400"
+        : "border-gray-300"
+    }`;
 
   render() {
     if (this.state.redirectToTwoFactor) {
@@ -35,9 +58,13 @@ class ForgotPassword extends React.Component {
                 <input
                   type="email"
                   name="email"
-                  className="w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none"
+                  className={this.getInputClass("email")}
                   placeholder="email address"
+                  required
                 />
+                {this.state.errors.email && (
+                  <p className="text-sm text-red-600">{this.state.errors.email}</p>
+                )}
                 <p className="text-left font-sans text-md font-normal">
                   Remember your password?
                   <Link to="/login" className="mx-2 text-blue-700">

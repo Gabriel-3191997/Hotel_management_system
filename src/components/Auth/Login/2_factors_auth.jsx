@@ -3,13 +3,46 @@ import { Link } from "react-router-dom";
 import NavBar from "../../Content/nav";
 
 class AuthCode extends React.Component {
+  state = {
+    errors: {},
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const code = ["digit1", "digit2", "digit3", "digit4"]
+      .map((field) => formData.get(field)?.toString().trim() || "")
+      .join("");
+
+    if (!/^\d{4}$/.test(code)) {
+      this.setState({
+        errors: {
+          code: "Enter the complete 4-digit verification code.",
+        },
+      });
+      return;
+    }
+
+    this.setState({ errors: {} });
+  };
+
+  getInputClass = () =>
+    `h-14 w-14 border text-center text-xl outline-none sm:h-16 sm:w-16 ${
+      this.state.errors.code
+        ? "border-red-500 text-red-900"
+        : "border-gray-300"
+    }`;
+
   render() {
     return (
       <>
         <NavBar />
         <div className="mt-16 min-h-screen bg-white px-4 py-10 sm:px-6 md:mt-3 md:flex md:items-center md:justify-center md:px-8">
           <div className="flex w-full justify-center">
-            <form className="w-full max-w-md bg-white px-5 py-10 sm:px-8 md:rounded-none md:border md:border-gray-200 md:px-10 md:shadow-sm">
+            <form
+              onSubmit={this.handleSubmit}
+              className="w-full max-w-md bg-white px-5 py-10 sm:px-8 md:rounded-none md:border md:border-gray-200 md:px-10 md:shadow-sm"
+            >
               <legend>
                 <h3 className="py-2 text-left font-sans text-2xl font-medium capitalize sm:text-3xl">
                   two factor authentication
@@ -21,29 +54,44 @@ class AuthCode extends React.Component {
               <div className="mt-8 flex items-center justify-between gap-3 sm:gap-4">
                 <input
                   type="text"
+                  name="digit1"
                   inputMode="numeric"
                   maxLength="1"
-                  className="h-14 w-14 border border-gray-300 text-center text-xl outline-none sm:h-16 sm:w-16"
+                  pattern="[0-9]"
+                  className={this.getInputClass()}
+                  required
                 />
                 <input
                   type="text"
+                  name="digit2"
                   inputMode="numeric"
                   maxLength="1"
-                  className="h-14 w-14 border border-gray-300 text-center text-xl outline-none sm:h-16 sm:w-16"
+                  pattern="[0-9]"
+                  className={this.getInputClass()}
+                  required
                 />
                 <input
                   type="text"
+                  name="digit3"
                   inputMode="numeric"
                   maxLength="1"
-                  className="h-14 w-14 border border-gray-300 text-center text-xl outline-none sm:h-16 sm:w-16"
+                  pattern="[0-9]"
+                  className={this.getInputClass()}
+                  required
                 />
                 <input
                   type="text"
+                  name="digit4"
                   inputMode="numeric"
                   maxLength="1"
-                  className="h-14 w-14 border border-gray-300 text-center text-xl outline-none sm:h-16 sm:w-16"
+                  pattern="[0-9]"
+                  className={this.getInputClass()}
+                  required
                 />
               </div>
+              {this.state.errors.code && (
+                <p className="mt-3 text-sm text-red-600">{this.state.errors.code}</p>
+              )}
               <div className="mt-8 space-y-4">
                 <button
                   type="submit"

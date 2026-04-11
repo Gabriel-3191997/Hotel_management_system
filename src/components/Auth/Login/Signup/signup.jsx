@@ -3,13 +3,54 @@ import { Link } from "react-router-dom";
 import NavBar from "../../../Content/nav";
 
 class SignupForm extends React.Component {
+  state = {
+    errors: {},
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const fullName = formData.get("fullname")?.toString().trim() || "";
+    const email = formData.get("email")?.toString().trim() || "";
+    const password = formData.get("password")?.toString().trim() || "";
+    const errors = {};
+
+    if (!fullName) {
+      errors.fullname = "Full name is required.";
+    }
+
+    if (!email) {
+      errors.email = "Email address is required.";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Enter a valid email address.";
+    }
+
+    if (!password) {
+      errors.password = "Password is required.";
+    } else if (password.length < 6) {
+      errors.password = "Password must be at least 6 characters.";
+    }
+
+    this.setState({ errors });
+  };
+
+  getInputClass = (fieldName) =>
+    `w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none ${
+      this.state.errors[fieldName]
+        ? "border-red-500 text-red-900 placeholder-red-400"
+        : "border-gray-300"
+    }`;
+
   render() {
     return (
       <>
         <NavBar />
         <div className="mt-16 min-h-screen bg-white px-4 py-10 sm:px-6 md:mt-3 md:flex md:items-center md:justify-center md:px-8">
           <div className="flex w-full justify-center">
-            <form className="w-full max-w-md bg-white px-5 py-10 sm:px-8 md:rounded-none md:border md:border-gray-200 md:px-10 md:shadow-sm">
+            <form
+              onSubmit={this.handleSubmit}
+              className="w-full max-w-md bg-white px-5 py-10 sm:px-8 md:rounded-none md:border md:border-gray-200 md:px-10 md:shadow-sm"
+            >
               <legend>
                 <h3 className="py-2 text-center font-sans text-2xl font-medium capitalize sm:text-3xl">
                   sign up
@@ -19,21 +60,34 @@ class SignupForm extends React.Component {
                 <input
                   type="text"
                   name="fullname"
-                  className="w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none"
+                  className={this.getInputClass("fullname")}
                   placeholder="full name"
+                  required
                 />
+                {this.state.errors.fullname && (
+                  <p className="text-sm text-red-600">{this.state.errors.fullname}</p>
+                )}
                 <input
                   type="email"
                   name="email"
-                  className="w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none"
+                  className={this.getInputClass("email")}
                   placeholder="email"
+                  required
                 />
+                {this.state.errors.email && (
+                  <p className="text-sm text-red-600">{this.state.errors.email}</p>
+                )}
                 <input
                   type="password"
                   name="password"
-                  className="w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none"
+                  className={this.getInputClass("password")}
                   placeholder="password"
+                  minLength="6"
+                  required
                 />
+                {this.state.errors.password && (
+                  <p className="text-sm text-red-600">{this.state.errors.password}</p>
+                )}
                 <p className="text-left font-sans text-md font-normal">
                   Already have an account?
                   <Link to="/login" className="mx-2 text-blue-700">

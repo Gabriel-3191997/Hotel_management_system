@@ -5,12 +5,40 @@ import NavBar from "../../Content/nav";
 class LoginForm extends React.Component {
   state = {
     redirectToBookingsHome: false,
+    errors: {},
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({ redirectToBookingsHome: true });
+    const formData = new FormData(event.currentTarget);
+    const username = formData.get("username")?.toString().trim() || "";
+    const password = formData.get("password")?.toString().trim() || "";
+    const errors = {};
+
+    if (!username) {
+      errors.username = "Username is required.";
+    }
+
+    if (!password) {
+      errors.password = "Password is required.";
+    } else if (password.length < 6) {
+      errors.password = "Password must be at least 6 characters.";
+    }
+
+    if (Object.keys(errors).length > 0) {
+      this.setState({ errors });
+      return;
+    }
+
+    this.setState({ errors: {}, redirectToBookingsHome: true });
   };
+
+  getInputClass = (fieldName) =>
+    `w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none ${
+      this.state.errors[fieldName]
+        ? "border-red-500 text-red-900 placeholder-red-400"
+        : "border-gray-300"
+    }`;
 
   render() {
     if (this.state.redirectToBookingsHome) {
@@ -35,15 +63,24 @@ class LoginForm extends React.Component {
                 <input
                   type="text"
                   name="username"
-                  className="w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none"
+                  className={this.getInputClass("username")}
                   placeholder="username"
+                  required
                 />
+                {this.state.errors.username && (
+                  <p className="text-sm text-red-600">{this.state.errors.username}</p>
+                )}
                 <input
                   type="password"
                   name="password"
-                  className="w-full border-b border-l-0 border-r-0 border-t-0 px-0 py-3 text-left text-base outline-none"
+                  className={this.getInputClass("password")}
                   placeholder="password"
+                  minLength="6"
+                  required
                 />
+                {this.state.errors.password && (
+                  <p className="text-sm text-red-600">{this.state.errors.password}</p>
+                )}
                 <div className="bg-white">
                   <p className="text-left font-sans font-normal text-md">
                     Do you have an
