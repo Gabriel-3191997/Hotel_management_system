@@ -29,7 +29,7 @@ class SinkorPalaceBooking extends React.Component {
       <>
         <NavBar />
         {/* <BottomNav /> */}
-        <div className="mx-3 bg-white mt-6 md:mt-20 lg:mx-44">
+        <div className="mx-3 bg-white mt-14 md:mt-20 lg:mx-44">
           <Link
             to="/bookings"
             className="text-left font-sans text-sm font-medium capitalize text-blue-700"
