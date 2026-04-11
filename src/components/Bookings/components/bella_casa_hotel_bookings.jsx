@@ -34,7 +34,7 @@ class BellaCassaHotelBooking extends React.Component {
             to="/bookings"
             className="text-left font-sans text-sm font-medium capitalize text-blue-700"
           >
-            back to hotels
+            back
           </Link>
         </div>
         <div className="flex flex-wrap justify-evenly mt-20 bg-white h-auto">
