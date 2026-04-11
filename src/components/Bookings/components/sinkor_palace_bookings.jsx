@@ -109,7 +109,7 @@ class SinkorPalaceBooking extends React.Component {
                       </ul>
                     </div>
                   </div>
-                  <form action="" method="POST">
+                  <form action="/bookings/submission" method="GET">
                     <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
                       availability
                     </h3>

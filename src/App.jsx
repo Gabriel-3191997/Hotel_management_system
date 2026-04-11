@@ -14,6 +14,7 @@ import BoluvardHotelBooking from "./components/Bookings/components/boluvard_hote
 import BellaCassaHotelBooking from "./components/Bookings/components/bella_casa_hotel_bookings";
 import SinkorPalaceHotelBooking from "./components/Bookings/components/sinkor_palace_bookings";
 import FammingtonHotelBooking from "./components/Bookings/components/fammington_hotel_bookings";
+import FormSubmission from "./components/Bookings/components/submission";
 import LoginForm from "./components/Auth/Login/login";
 import AuthCode from "./components/Auth/Login/2_factors_auth";
 import ForgotPassword from "./components/Auth/Login/forget_password";
@@ -55,6 +56,7 @@ class App extends React.Component {
           <Route path="/bookings/bella-casa-hotel" element={<BellaCassaHotelBooking />} />
           <Route path="/bookings/sinkor-palace-hotel" element={<SinkorPalaceHotelBooking />} />
           <Route path="/bookings/fammington-hotel" element={<FammingtonHotelBooking />} />
+          <Route path="/bookings/submission" element={<FormSubmission />} />
         </Routes>
       </>
     );
