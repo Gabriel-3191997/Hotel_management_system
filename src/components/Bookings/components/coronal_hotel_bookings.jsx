@@ -193,11 +193,12 @@ class CoronaHotelBooking extends React.Component {
                         </h3>
                         <br />
                         <p className="font-sans text-sm capitalize">suites</p>
-                        <input
-                          type="number"
-                          placeholder="0"
-                          className="w-28 border-none bg-gray-50"
-                        />
+                        <select className="w-28 border-none bg-gray-50 text-sm capitalize">
+                          <option value="none">None</option>
+                          <option value="family">Family</option>
+                          <option value="single">Single</option>
+                          <option value="double">Double</option>
+                        </select>
                       </div>
                       <div className="w-32">
                         <br />
@@ -229,7 +230,7 @@ class CoronaHotelBooking extends React.Component {
                         type="submit"
                         className="bg-amber-500 px-8 py-2 font-sans text-md font-medium capitalize"
                       >
-                        next
+                        book now
                       </button>
                     </div>
                   </form>
