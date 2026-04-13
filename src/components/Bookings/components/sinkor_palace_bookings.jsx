@@ -5,15 +5,17 @@ import img2 from "../../../assets/images/Z (18).jpeg";
 import img3 from "../../../assets/images/9k= (18).jpeg";
 import img4 from "../../../assets/images/Z (16).jpeg";
 
-function SinkorPalaceBooking() {
-  return (
-    <HotelBookingForm
-      hotelName="sinkor palace hotel"
-      location="congo town"
-      heroImage={img1}
-      galleryImages={[img2, img3, img4]}
-    />
-  );
+class SinkorPalaceBooking extends React.Component {
+  render() {
+    return (
+      <HotelBookingForm
+        hotelName="sinkor palace hotel"
+        location="congo town"
+        heroImage={img1}
+        galleryImages={[img2, img3, img4]}
+      />
+    );
+  }
 }
 
 export default SinkorPalaceBooking;

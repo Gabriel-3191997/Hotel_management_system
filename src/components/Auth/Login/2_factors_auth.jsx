@@ -10,27 +10,19 @@ class AuthCode extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const code = ["digit1", "digit2", "digit3", "digit4"]
-      .map((field) => formData.get(field)?.toString().trim() || "")
-      .join("");
+    const d1 = formData.get("digit1")?.toString().trim() || "";
+    const d2 = formData.get("digit2")?.toString().trim() || "";
+    const d3 = formData.get("digit3")?.toString().trim() || "";
+    const d4 = formData.get("digit4")?.toString().trim() || "";
+    const code = d1 + d2 + d3 + d4;
 
-    if (!/^\d{4}$/.test(code)) {
-      this.setState({
-        errors: {
-          code: "Enter the complete 4-digit verification code.",
-        },
-      });
-      return;
-    }
-
+    // No validation as requested; clear errors and continue
     this.setState({ errors: {} });
   };
 
   getInputClass = () =>
     `h-14 w-14 border text-center text-xl outline-none sm:h-16 sm:w-16 ${
-      this.state.errors.code
-        ? "border-red-500 text-red-900"
-        : "border-gray-300"
+      this.state.errors.code ? "border-red-500 text-red-900" : "border-gray-300"
     }`;
 
   render() {
@@ -90,7 +82,9 @@ class AuthCode extends React.Component {
                 />
               </div>
               {this.state.errors.code && (
-                <p className="mt-3 text-sm text-red-500">{this.state.errors.code}</p>
+                <p className="mt-3 text-sm text-red-500">
+                  {this.state.errors.code}
+                </p>
               )}
               <div className="mt-8 space-y-4">
                 <button
