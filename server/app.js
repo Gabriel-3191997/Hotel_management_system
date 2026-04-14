@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require("express");
 const dbRouter = require("./routes/database");
 const port = 8080;
