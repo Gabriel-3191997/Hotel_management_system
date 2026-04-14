@@ -47,9 +47,10 @@ class Discover extends React.Component {
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
                 <Link to="/bookings/royal-grand-hotel">royal grand hotel</Link> <br />
-                <span className="font-sans font-normal text-sm">
-                  12 Street Sinkor
-                </span>
+              <ul className="display font-normal text-sm inline-flex flex-nowrap gap-10">
+                <li>12 street, sinkor</li>
+                <li>$5 per night</li> 
+              </ul>
               </p>
               <div className="flex flex-wrap justify-start gap-0 bg-white">
                 <div className="w-auto">
@@ -94,9 +95,10 @@ class Discover extends React.Component {
               </div>
               <p className="text-lg py-5 font-sans text-left capitalize mx-0 font-medium">
                 <Link to="/bookings/corona-hotel">corona hotel</Link> <br />
-                <span className="font-sans font-normal text-sm">
-                  24 Street Sinkor
-                </span>
+                <ul className="display inline-flex justify-evenly gap-10">
+                  <li>24 street, sinkor</li>
+                  <li></li>
+                </ul>
               </p>
               <div className="flex flex-wrap justify-start gap-0 bg-white">
                 <div className="w-auto">

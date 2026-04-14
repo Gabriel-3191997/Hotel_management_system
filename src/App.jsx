@@ -27,6 +27,7 @@ import BookingBoluvardPalaceHotel from "./components/Bookings/pages/boluvard_pal
 import BookingBellaCasaHotel from "./components/Bookings/pages/bella_casa_hotel";
 import BookingSinkorPalaceHotel from "./components/Bookings/pages/sinkor_palace";
 import BookingFammingtonHotel from "./components/Bookings/pages/fammington_hotel";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
@@ -37,6 +38,16 @@ class App extends React.Component {
     this.loaderTimeout = window.setTimeout(() => {
       this.setState({ isLoading: false });
     }, 5000);
+
+    // Test connection to the backend
+    axios
+      .get("http://localhost:8080/home")
+      .then(() => {
+        console.log("Connected to the backend successfully.");
+      })
+      .catch((error) => {
+        console.error("Error connecting to the backend:", error);
+      });
   }
 
   componentWillUnmount() {
@@ -49,7 +60,8 @@ class App extends React.Component {
     }
 
     return (
-      <>
+      <div>
+        <h1>Welcome to the Hotel Management System</h1>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/royal-grand-hotel" element={<RoyalGrandHotel />} />
@@ -63,21 +75,57 @@ class App extends React.Component {
           <Route path="/forget-password" element={<ForgotPassword />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/bookings" element={<BookingHomePage />} />
-          <Route path="/bookings/hotels/royal-grand-hotel" element={<BookingRoyalGrandHotel />} />
-          <Route path="/bookings/hotels/corona-hotel" element={<BookingCoronaHotel />} />
-          <Route path="/bookings/hotels/boluvard-palace" element={<BookingBoluvardPalaceHotel />} />
-          <Route path="/bookings/hotels/bella-casa-hotel" element={<BookingBellaCasaHotel />} />
-          <Route path="/bookings/hotels/sinkor-palace-hotel" element={<BookingSinkorPalaceHotel />} />
-          <Route path="/bookings/hotels/fammington-hotel" element={<BookingFammingtonHotel />} />
-          <Route path="/bookings/royal-grand-hotel" element={<RoyalGrandBooking />} />
-          <Route path="/bookings/corona-hotel" element={<CoronaHotelBooking />} />
-          <Route path="/bookings/boluvard-palace" element={<BoluvardHotelBooking />} />
-          <Route path="/bookings/bella-casa-hotel" element={<BellaCassaHotelBooking />} />
-          <Route path="/bookings/sinkor-palace-hotel" element={<SinkorPalaceHotelBooking />} />
-          <Route path="/bookings/fammington-hotel" element={<FammingtonHotelBooking />} />
+          <Route
+            path="/bookings/hotels/royal-grand-hotel"
+            element={<BookingRoyalGrandHotel />}
+          />
+          <Route
+            path="/bookings/hotels/corona-hotel"
+            element={<BookingCoronaHotel />}
+          />
+          <Route
+            path="/bookings/hotels/boluvard-palace"
+            element={<BookingBoluvardPalaceHotel />}
+          />
+          <Route
+            path="/bookings/hotels/bella-casa-hotel"
+            element={<BookingBellaCasaHotel />}
+          />
+          <Route
+            path="/bookings/hotels/sinkor-palace-hotel"
+            element={<BookingSinkorPalaceHotel />}
+          />
+          <Route
+            path="/bookings/hotels/fammington-hotel"
+            element={<BookingFammingtonHotel />}
+          />
+          <Route
+            path="/bookings/royal-grand-hotel"
+            element={<RoyalGrandBooking />}
+          />
+          <Route
+            path="/bookings/corona-hotel"
+            element={<CoronaHotelBooking />}
+          />
+          <Route
+            path="/bookings/boluvard-palace"
+            element={<BoluvardHotelBooking />}
+          />
+          <Route
+            path="/bookings/bella-casa-hotel"
+            element={<BellaCassaHotelBooking />}
+          />
+          <Route
+            path="/bookings/sinkor-palace-hotel"
+            element={<SinkorPalaceHotelBooking />}
+          />
+          <Route
+            path="/bookings/fammington-hotel"
+            element={<FammingtonHotelBooking />}
+          />
           <Route path="/bookings/submission" element={<FormSubmission />} />
         </Routes>
-      </>
+      </div>
     );
   }
 }
