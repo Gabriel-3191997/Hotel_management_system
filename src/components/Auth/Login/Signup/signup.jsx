@@ -5,6 +5,8 @@ import NavBar from "../../../Content/nav";
 class SignupForm extends React.Component {
   state = {
     errors: {},
+    apiError: null,
+    successMessage: null,
   };
 
   handleSubmit = (event) => {
@@ -32,6 +34,31 @@ class SignupForm extends React.Component {
     }
 
     this.setState({ errors });
+    // if no validation errors, submit to backend
+    if (Object.keys(errors).length === 0) {
+      this.setState({ apiError: null, successMessage: null });
+      fetch("http://localhost:8080/users/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: fullName, email, password }),
+      })
+        .then(async (res) => {
+          const data = await res.json().catch(() => ({}));
+          if (res.ok) {
+            this.setState({
+              successMessage: data.message || "Account created",
+            });
+            // optionally redirect to login after success
+            setTimeout(() => (window.location.href = "/login"), 1200);
+          } else {
+            this.setState({ apiError: data.error || "Signup failed" });
+          }
+        })
+        .catch((err) => {
+          console.error("Signup request error:", err);
+          this.setState({ apiError: "Network error" });
+        });
+    }
   };
 
   getInputClass = (fieldName) =>
@@ -65,7 +92,9 @@ class SignupForm extends React.Component {
                   required
                 />
                 {this.state.errors.fullname && (
-                  <p className="text-sm text-red-500">{this.state.errors.fullname}</p>
+                  <p className="text-sm text-red-500">
+                    {this.state.errors.fullname}
+                  </p>
                 )}
                 <input
                   type="email"
@@ -75,7 +104,9 @@ class SignupForm extends React.Component {
                   required
                 />
                 {this.state.errors.email && (
-                  <p className="text-sm text-red-500">{this.state.errors.email}</p>
+                  <p className="text-sm text-red-500">
+                    {this.state.errors.email}
+                  </p>
                 )}
                 <input
                   type="password"
@@ -86,7 +117,9 @@ class SignupForm extends React.Component {
                   required
                 />
                 {this.state.errors.password && (
-                  <p className="text-sm text-red-500">{this.state.errors.password}</p>
+                  <p className="text-sm text-red-500">
+                    {this.state.errors.password}
+                  </p>
                 )}
                 <p className="text-left font-sans text-md font-normal">
                   Already have an account?
@@ -100,6 +133,16 @@ class SignupForm extends React.Component {
                 >
                   sign up
                 </button>
+                {this.state.apiError && (
+                  <p className="mt-3 text-sm text-red-500">
+                    {this.state.apiError}
+                  </p>
+                )}
+                {this.state.successMessage && (
+                  <p className="mt-3 text-sm text-green-600">
+                    {this.state.successMessage}
+                  </p>
+                )}
               </div>
             </form>
           </div>

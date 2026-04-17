@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
@@ -8,7 +8,6 @@ import {
   faMobileScreenButton,
 } from "@fortawesome/free-solid-svg-icons";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import NavBar from "../Content/nav";
 import Suites from "../Content/suites";
 
@@ -57,9 +56,25 @@ class HotelBookingForm extends React.Component {
         body: JSON.stringify(bookingData),
       });
       const resJson = await response.json().catch(() => null);
-      if (response.ok && resJson && resJson.success) {
+      // Navigate if response is OK. Prefer backend JSON flag, but allow HTTP-OK without JSON.
+      if (response.ok && (resJson ? resJson.success : true)) {
         console.log("Booking successful", resJson);
-        this.setState({ redirectToSubmission: true });
+        // Clear form fields and show success briefly
+        this.setState(
+          {
+            checkIn: null,
+            checkOut: null,
+            adult: "",
+            children: "",
+            suite: "none",
+            rooms: "",
+            paymentNumber: "",
+            success: true,
+          },
+          () => {
+            setTimeout(() => this.setState({ success: false }), 3500);
+          },
+        );
       } else {
         console.error("Booking failed", resJson || response.status);
       }
