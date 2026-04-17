@@ -4,19 +4,21 @@ const express = require("express");
 const mysql = require("mysql");
 const router = express.Router();
 
-router.post("/bookings", (req) => {
-  // Parse bookings from frontend
-  const availability = req.body.Availability || req.body.Availibility || null;
+router.post("/bookings", (req, res) => {
   const {
+    Hotel = null,
+    Customers = null,
+    Email = null,
+    Availability = null,
     Departure = null,
     Rooms = null,
     Suites = null,
     Adult = null,
     Children = null,
-    Payment = null,
+    PhoneNumber = null,
+    AmountPaid = 0,
   } = req.body;
 
-  // Create a local connection (keeps changes minimal and avoids modifying other files)
   const con = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -24,24 +26,36 @@ router.post("/bookings", (req) => {
     database: "hotels",
   });
 
-  const sql =
-    "INSERT INTO bookings (Availability, Departure, Rooms, Suites, Adult, Children, Payment) VALUES (?, ?, ?, ?, ?, ?, ?)";
+  const sql = `
+    INSERT INTO bookings 
+    (Hotel, Customers, Email, Availability, Departure, Rooms, Suites, Adult, Children, PhoneNumber, AmountPaid) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
   const values = [
-    availability,
+    Hotel,
+    Customers,
+    Email,
+    Availability,
     Departure,
     Rooms,
     Suites,
     Adult,
     Children,
-    Payment,
+    PhoneNumber,
+    AmountPaid,
   ];
 
-  con.query(sql, values, (err) => {
+  con.query(sql, values, (err, result) => {
     if (err) {
-      console.error("Error inserting booking");
-      return;
+      console.error("Error inserting booking", err);
+      return res.status(500).json({ error: "Database error" });
     }
-    console.log("Booking inserted");
+
+    return res.status(201).json({
+      message: "Booking inserted successfully",
+      bookingId: result.insertId,
+    });
   });
 });
 

@@ -33,17 +33,23 @@ class HotelBookingForm extends React.Component {
   handleSubmit = async (e) => {
     if (e && e.preventDefault) e.preventDefault();
 
+    const data = this.props.location?.state || {};
+
     const { checkIn, checkOut, adult, children, suite, rooms, paymentNumber } =
       this.state;
 
     const bookingData = {
-      Availibility: checkIn,
+      Hotel: data.hotelName,
+      Customers: localStorage.getItem("username"),
+      Email: null,
+      Availability: checkIn,
       Departure: checkOut,
       Adult: adult,
       Children: children,
       Suites: suite,
       Rooms: rooms,
-      Payment: paymentNumber,
+      PhoneNumber: paymentNumber,
+      AmountPaid: 0,
     };
 
     try {
