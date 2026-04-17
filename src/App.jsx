@@ -61,7 +61,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1>Welcome to the Hotel Management System</h1>
+        
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/royal-grand-hotel" element={<RoyalGrandHotel />} />

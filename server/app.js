@@ -1,18 +1,26 @@
 /* eslint-disable no-undef */
 const express = require("express");
 const dbRouter = require("./routes/database");
+const bookingsRouter = require("./routes/bookings");
+const usersRouter = require("./routes/users");
+const emailRouter = require("./routes/email");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 const port = 8080;
 const app = express();
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // connect to database
 app.use("/", dbRouter);
 
-// const con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "password@123",
-//   database: "hotels",
-// });
+// Routes
+app.use("/bookings", bookingsRouter); // Booking form data
+app.use("/users", usersRouter); // Signup, login, and forget password forms
+app.use("/email", emailRouter); // Email-related routes
 
 app
   .get("/home", (req, res) => {

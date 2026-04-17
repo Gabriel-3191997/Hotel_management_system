@@ -31,10 +31,41 @@ class HotelBookingForm extends React.Component {
     this.setState({ [field]: value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     if (e && e.preventDefault) e.preventDefault();
-    // No validation per request; simply navigate to submission
-    this.setState({ redirectToSubmission: true });
+
+    const { checkIn, checkOut, adult, children, suite, rooms, paymentNumber } =
+      this.state;
+
+    const bookingData = {
+      Availibility: checkIn,
+      Departure: checkOut,
+      Adult: adult,
+      Children: children,
+      Suites: suite,
+      Rooms: rooms,
+      Payment: paymentNumber,
+    };
+
+    try {
+      console.log("Submitting booking:", bookingData);
+      const response = await fetch("http://localhost:8080/bookings/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingData),
+      });
+      const resJson = await response.json().catch(() => null);
+      if (response.ok && resJson && resJson.success) {
+        console.log("Booking successful", resJson);
+        this.setState({ redirectToSubmission: true });
+      } else {
+        console.error("Booking failed", resJson || response.status);
+      }
+    } catch (error) {
+      console.error("Error connecting to the server:", error);
+    }
   };
 
   renderGallery() {
