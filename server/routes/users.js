@@ -13,9 +13,7 @@ const con = mysql.createConnection({
 // establish connection and log any errors
 con.connect((err) => {
   if (err) {
-    console.error("MySQL connection error:", err);
-  } else {
-    console.log("MySQL connected (users route)");
+    console.log("connected");
   }
 });
 
@@ -23,6 +21,8 @@ con.connect((err) => {
 
 // sign up route
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
 router.post("/signup", (req, res) => {
   const { username, email, password } = req.body;
@@ -31,43 +31,93 @@ router.post("/signup", (req, res) => {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
-  // ensure table exists
-  const sql = `CREATE TABLE IF NOT EXISTS user_credentials (
-    
+  // ensure table exists (non-destructive)
+  const createTableSql = `CREATE TABLE IF NOT EXISTS user_credentials (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-      )`;
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  )`;
 
-  con.query(sql, (err) => {
+  con.query(createTableSql, (err) => {
     if (err) {
-      console.log("connected");
+      console.error("Error ensuring user_credentials table:", err);
+      return res.status(500).json({ error: "Database error" });
     }
 
     // hash password
     const salt = bcrypt.genSaltSync(10);
     const hashed = bcrypt.hashSync(password, salt);
 
-    const sql =
+    const insertSql =
       "INSERT INTO user_credentials (username, email, password) VALUES (?, ?, ?)";
 
-    con.query(sql, [username, email, hashed], (err) => {
+    con.query(insertSql, [username, email, hashed], (err) => {
       if (err) {
-        console.error("connected");
-        // duplicate email
+        console.error("DB error (signup):", err);
         if (err.code === "ER_DUP_ENTRY") {
           return res.status(409).json({ error: "Email already registered" });
         }
         return res.status(500).json({ error: "Database error" });
       }
+
+      //   return res
+      //     .status(201)
+      //     .json({ message: "User created", id: result.insertId });
     });
   });
 });
 
 // login route
+router.post("/login", (req, res) => {
+  const { email, password } = req.body;
 
-router.get("/login", (req, res) => {
-  res.send("login");
+  if (!email || !password) {
+    return res.status(400).json({ error: "Missing email or password" });
+  }
+
+  const sql = "SELECT * FROM user_credentials WHERE email = ? LIMIT 1";
+  con.query(sql, [email], (err, results) => {
+    if (err) {
+      console.error("DB error (login):", err);
+      return res.status(500).json({ error: "Database error" });
+    }
+
+    if (!results || results.length === 0) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
+
+    const user = results[0];
+    const hashed = user.password;
+
+    // Compare password
+    let passwordMatches = false;
+    try {
+      passwordMatches = bcrypt.compareSync(password, hashed);
+    } catch (err) {
+      console.error("bcrypt compare error:", err);
+      passwordMatches = false;
+    }
+
+    // fallback if password stored as plain text
+    if (!passwordMatches && hashed === password) {
+      passwordMatches = true;
+    }
+
+    if (!passwordMatches) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
+
+    // sign and return JWT (inline payload)
+    const token = jwt.sign(
+      { email: user.email, username: user.username || user.name || null },
+      JWT_SECRET,
+      { expiresIn: "2h" },
+    );
+
+    return console.log({ message: "Login successful", token });
+  });
 });
 
 module.exports = router;
