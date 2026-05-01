@@ -144,11 +144,11 @@ router.post("/hotel-click", (req, res) => {
     return res.status(400).json({ error: "Hotel name is required" });
   }
 
-  return res.status(200).json({
-    success: true,
-    message: "Hotel selected",
-    hotelName,
-  });
+  // return res.status(200).json({
+  //   success: true,
+  //   message: "Hotel selected",
+  //   hotelName,
+  // });
 });
 
 module.exports = router;

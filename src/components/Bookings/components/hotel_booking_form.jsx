@@ -35,7 +35,7 @@ class HotelBookingForm extends React.Component {
 
   handleHotelClick = async (hotelName) => {
     try {
-      await fetch("http://localhost:8080/bookings/hotel-click", {
+      await fetch("http://localhost:8080/api/hotel-click", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,9 +71,11 @@ class HotelBookingForm extends React.Component {
       rooms,
       paymentNumber,
       hotelName: hotelName || this.props.hotelName,
+      amount: 0,
     };
 
     try {
+      console.log("Submitting booking:", bookingData);
       const response = await fetch("http://localhost:8080/bookings/bookings", {
         method: "POST",
         headers: {
@@ -84,6 +86,8 @@ class HotelBookingForm extends React.Component {
       const resJson = await response.json().catch(() => null);
 
       if (response.ok && (resJson ? resJson.success : true)) {
+        console.log("Booking successful", resJson);
+
         this.setState(
           {
             checkIn: null,
@@ -229,7 +233,7 @@ class HotelBookingForm extends React.Component {
                   </div>
 
                   <form onSubmit={this.handleSubmit}>
-                    {/* <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
+                    <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
                       hotel
                     </h3>
                     <div className="py-2 bg-white">
@@ -248,7 +252,10 @@ class HotelBookingForm extends React.Component {
                         >
                           royal grand hotel
                         </option>
-                        <option value="corona hotel" className="capitalize text-sm">
+                        <option
+                          value="corona hotel"
+                          className="capitalize text-sm"
+                        >
                           corona hotel
                         </option>
                         <option
@@ -276,7 +283,7 @@ class HotelBookingForm extends React.Component {
                           sinkor palace hotel
                         </option>
                       </select>
-                    </div> */}
+                    </div>
                     <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
                       availability
                     </h3>
