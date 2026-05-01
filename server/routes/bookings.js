@@ -20,6 +20,25 @@ const formatDate = (dateValue) => {
   return date.toISOString().slice(0, 10);
 };
 
+const normalizeHotelName = (hotelName) =>
+  hotelName.toString().trim().toLowerCase().replace(/\s+/g, " ");
+
+const hotelPayments = {
+  "royal grand hotel": "$10",
+  "boluvard hotel": "$25",
+  "boluvard palace": "$25",
+  "sinkor palace": "$5",
+  "sinkor palace hotel": "$5",
+  "bella cassa": "$5",
+  "bella cassa hotel": "$5",
+  "bella casa hotel": "$5",
+  "fammington hotel": "$25",
+  "corona hotel": "$10",
+};
+
+const getHotelPayment = (hotelName) =>
+  hotelPayments[normalizeHotelName(hotelName)] || null;
+
 router.post("/bookings", (req, res) => {
   const {
     customer = null,
@@ -42,14 +61,30 @@ router.post("/bookings", (req, res) => {
     Payment = null,
     hotelName = null,
     Hotels = null,
-    amount = 0,
-    Amount = null,
   } = req.body;
 
   const selectedHotel = hotelName || Hotels;
+  const selectedCustomer = customer || Customers;
+  const selectedEmail = email || Email;
 
   if (!selectedHotel) {
     return res.status(400).json({ error: "Hotel name is required" });
+  }
+
+  if (!selectedCustomer || !selectedEmail) {
+    return res.status(401).json({
+      success: false,
+      error: "Please sign up or log in before placing a booking",
+    });
+  }
+
+  const hotelPayment = getHotelPayment(selectedHotel);
+
+  if (!hotelPayment) {
+    return res.status(400).json({
+      success: false,
+      error: `No payment amount is configured for ${selectedHotel}`,
+    });
   }
 
   const sql = `
@@ -59,18 +94,18 @@ router.post("/bookings", (req, res) => {
   `;
 
   const values = [
-    customer || Customers,
-    email || Email,
+    selectedCustomer,
+    selectedEmail,
     paymentNumber || Payment,
     selectedHotel,
-    Amount || amount,
+    hotelPayment,
     formatDate(checkIn || Availability),
     formatDate(checkOut || Departure),
     rooms || Rooms,
     suite || Suites,
     adult || Adult,
     children || Children,
-    paymentNumber || Payment,
+    hotelPayment,
   ];
 
   con.query(sql, values, (err, result) => {
@@ -97,6 +132,7 @@ router.post("/bookings", (req, res) => {
       success: true,
       message: "Booking Successful",
       bookingId: result.insertId || null,
+      payment: hotelPayment,
     });
   });
 });

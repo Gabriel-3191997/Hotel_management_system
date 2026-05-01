@@ -13,8 +13,11 @@ const con = mysql.createConnection({
 // establish connection and log any errors
 con.connect((err) => {
   if (err) {
-    console.log("connected");
+    console.error("Database connection error:", err);
+    return;
   }
+
+  console.log("connected");
 });
 
 // manages user credentials
@@ -53,7 +56,7 @@ router.post("/signup", (req, res) => {
     const insertSql =
       "INSERT INTO user_credentials (username, email, password) VALUES (?, ?, ?)";
 
-    con.query(insertSql, [username, email, hashed], (err) => {
+    con.query(insertSql, [username, email, hashed], (err, result) => {
       if (err) {
         console.error("DB error (signup):", err);
         if (err.code === "ER_DUP_ENTRY") {
@@ -62,9 +65,20 @@ router.post("/signup", (req, res) => {
         return res.status(500).json({ error: "Database error" });
       }
 
-      //   return res
-      //     .status(201)
-      //     .json({ message: "User created", id: result.insertId });
+      const token = jwt.sign({ email, username }, JWT_SECRET, {
+        expiresIn: "2h",
+      });
+
+      return res.status(201).json({
+        success: true,
+        message: "Account created",
+        token,
+        user: {
+          id: result.insertId,
+          username,
+          email,
+        },
+      });
     });
   });
 });
@@ -109,14 +123,22 @@ router.post("/login", (req, res) => {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    // sign and return JWT (inline payload)
     const token = jwt.sign(
       { email: user.email, username: user.username || user.name || null },
       JWT_SECRET,
       { expiresIn: "2h" },
     );
 
-    return console.log({ message: "Login successful", token });
+    return res.json({
+      success: true,
+      message: "Login successful",
+      token,
+      user: {
+        id: user.id,
+        username: user.username || user.name || null,
+        email: user.email,
+      },
+    });
   });
 });
 

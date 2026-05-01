@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import NavBar from "../../../Content/nav";
 
 class SignupForm extends React.Component {
@@ -7,6 +7,7 @@ class SignupForm extends React.Component {
     errors: {},
     apiError: null,
     successMessage: null,
+    redirectToBookingsHome: false,
   };
 
   handleSubmit = (event) => {
@@ -45,11 +46,20 @@ class SignupForm extends React.Component {
         .then(async (res) => {
           const data = await res.json().catch(() => ({}));
           if (res.ok) {
+            if (data.token) {
+              localStorage.setItem("token", data.token);
+            }
+
+            localStorage.setItem(
+              "username",
+              data.user?.username || fullName,
+            );
+            localStorage.setItem("email", data.user?.email || email);
+
             this.setState({
               successMessage: data.message || "Account created",
+              redirectToBookingsHome: true,
             });
-            // optionally redirect to login after success
-            setTimeout(() => (window.location.href = "/login"), 1200);
           } else {
             this.setState({ apiError: data.error || "Signup failed" });
           }
@@ -69,6 +79,10 @@ class SignupForm extends React.Component {
     }`;
 
   render() {
+    if (this.state.redirectToBookingsHome) {
+      return <Navigate to="/bookings" replace />;
+    }
+
     return (
       <>
         <NavBar />

@@ -6,17 +6,20 @@ class LoginForm extends React.Component {
   state = {
     redirectToBookingsHome: false,
     errors: {},
+    apiError: null,
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const username = formData.get("username")?.toString().trim() || "";
+    const email = formData.get("email")?.toString().trim() || "";
     const password = formData.get("password")?.toString().trim() || "";
     const errors = {};
 
-    if (!username) {
-      errors.username = "Username is required.";
+    if (!email) {
+      errors.email = "Email is required.";
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Enter a valid email address.";
     }
 
     if (!password) {
@@ -30,7 +33,43 @@ class LoginForm extends React.Component {
       return;
     }
 
-    this.setState({ errors: {}, redirectToBookingsHome: true });
+    try {
+      const response = await fetch("http://localhost:8080/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        this.setState({
+          apiError: data.error || "Login failed",
+          errors: {},
+        });
+        return;
+      }
+
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
+
+      localStorage.setItem("username", data.user?.username || "");
+      localStorage.setItem("email", data.user?.email || email);
+
+      this.setState({
+        apiError: null,
+        errors: {},
+        redirectToBookingsHome: true,
+      });
+    } catch (error) {
+      console.error("Login request error:", error);
+      this.setState({
+        apiError: "Unable to connect to the login server.",
+        errors: {},
+      });
+    }
   };
 
   getInputClass = (fieldName) =>
@@ -61,14 +100,14 @@ class LoginForm extends React.Component {
               </legend>
               <div className="mt-6 space-y-6">
                 <input
-                  type="text"
-                  name="username"
-                  className={this.getInputClass("username")}
-                  placeholder="username"
+                  type="email"
+                  name="email"
+                  className={this.getInputClass("email")}
+                  placeholder="email"
                   required
                 />
-                {this.state.errors.username && (
-                  <p className="text-sm text-red-500">{this.state.errors.username}</p>
+                {this.state.errors.email && (
+                  <p className="text-sm text-red-500">{this.state.errors.email}</p>
                 )}
                 <input
                   type="password"
@@ -101,6 +140,9 @@ class LoginForm extends React.Component {
                 >
                   login
                 </button>
+                {this.state.apiError && (
+                  <p className="text-sm text-red-500">{this.state.apiError}</p>
+                )}
               </div>
             </form>
           </div>

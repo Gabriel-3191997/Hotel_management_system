@@ -71,7 +71,6 @@ class HotelBookingForm extends React.Component {
       rooms,
       paymentNumber,
       hotelName: hotelName || this.props.hotelName,
-      amount: 0,
     };
 
     try {
