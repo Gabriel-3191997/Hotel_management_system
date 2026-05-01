@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
@@ -22,7 +22,10 @@ class HotelBookingForm extends React.Component {
       suite: "none",
       rooms: "",
       paymentNumber: "",
+      hotelName: props.hotelName || "",
       redirectToSubmission: false,
+      error: "",
+      success: false,
     };
   }
 
@@ -30,30 +33,48 @@ class HotelBookingForm extends React.Component {
     this.setState({ [field]: value });
   };
 
+  handleHotelClick = async (hotelName) => {
+    try {
+      await fetch("http://localhost:8080/bookings/hotel-click", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ hotelName }),
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   handleSubmit = async (e) => {
-    if (e && e.preventDefault) e.preventDefault();
-
-    const data = this.props.location?.state || {};
-
-    const { checkIn, checkOut, adult, children, suite, rooms, paymentNumber } =
-      this.state;
+    e.preventDefault();
+    const {
+      checkIn,
+      checkOut,
+      adult,
+      children,
+      suite,
+      rooms,
+      paymentNumber,
+      hotelName,
+    } = this.state;
 
     const bookingData = {
-      Hotel: data.hotelName,
-      Customers: localStorage.getItem("username"),
-      Email: null,
-      Availability: checkIn,
-      Departure: checkOut,
-      Adult: adult,
-      Children: children,
-      Suites: suite,
-      Rooms: rooms,
-      PhoneNumber: paymentNumber,
-      AmountPaid: 0,
+      customer: localStorage.getItem("username") || null,
+      email: localStorage.getItem("email") || null,
+      checkIn,
+      checkOut,
+      adult,
+      children,
+      suite,
+      rooms,
+      paymentNumber,
+      hotelName: hotelName || this.props.hotelName,
+      amount: 0,
     };
 
     try {
-      console.log("Submitting booking:", bookingData);
       const response = await fetch("http://localhost:8080/bookings/bookings", {
         method: "POST",
         headers: {
@@ -62,10 +83,8 @@ class HotelBookingForm extends React.Component {
         body: JSON.stringify(bookingData),
       });
       const resJson = await response.json().catch(() => null);
-      // Navigate if response is OK. Prefer backend JSON flag, but allow HTTP-OK without JSON.
+
       if (response.ok && (resJson ? resJson.success : true)) {
-        console.log("Booking successful", resJson);
-        // Clear form fields and show success briefly
         this.setState(
           {
             checkIn: null,
@@ -75,6 +94,8 @@ class HotelBookingForm extends React.Component {
             suite: "none",
             rooms: "",
             paymentNumber: "",
+            hotelName: this.props.hotelName || hotelName,
+            error: "",
             success: true,
           },
           () => {
@@ -83,9 +104,19 @@ class HotelBookingForm extends React.Component {
         );
       } else {
         console.error("Booking failed", resJson || response.status);
+        this.setState({
+          error:
+            resJson?.error ||
+            "Booking failed. Please check the form and try again.",
+          success: false,
+        });
       }
     } catch (error) {
       console.error("Error connecting to the server:", error);
+      this.setState({
+        error: "Unable to connect to the booking server.",
+        success: false,
+      });
     }
   };
 
@@ -199,6 +230,54 @@ class HotelBookingForm extends React.Component {
                   </div>
 
                   <form onSubmit={this.handleSubmit}>
+                    {/* <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
+                      hotel
+                    </h3>
+                    <div className="py-2 bg-white">
+                      <select
+                        name="Hotels"
+                        id="hotels"
+                        value={this.state.hotelName}
+                        onChange={(e) =>
+                          this.handleChange("hotelName", e.target.value)
+                        }
+                        className="capitalize mx-5 text-sm font-sans border-none bg-white"
+                      >
+                        <option
+                          value="royal grand hotel"
+                          className="capitalize text-sm"
+                        >
+                          royal grand hotel
+                        </option>
+                        <option value="corona hotel" className="capitalize text-sm">
+                          corona hotel
+                        </option>
+                        <option
+                          value="boluvard hotel"
+                          className="capitalize text-sm"
+                        >
+                          boluvard hotel
+                        </option>
+                        <option
+                          value="bella cassa hotel"
+                          className="capitalize text-sm"
+                        >
+                          bella cassa hotel
+                        </option>
+                        <option
+                          value="fammington hotel"
+                          className="capitalize text-sm"
+                        >
+                          fammington hotel
+                        </option>
+                        <option
+                          value="sinkor palace hotel"
+                          className="capitalize text-sm"
+                        >
+                          sinkor palace hotel
+                        </option>
+                      </select>
+                    </div> */}
                     <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
                       availability
                     </h3>
@@ -326,6 +405,16 @@ class HotelBookingForm extends React.Component {
                     </div>
 
                     <div className="mx-3 py-3 md:mx-3">
+                      {this.state.error && (
+                        <p className="mb-3 text-sm text-red-600">
+                          {this.state.error}
+                        </p>
+                      )}
+                      {this.state.success && (
+                        <p className="mb-3 text-sm text-green-700">
+                          Booking saved successfully.
+                        </p>
+                      )}
                       <button
                         type="submit"
                         className="cursor-pointer bg-amber-500 px-8 py-2 font-sans text-md font-medium capitalize"
