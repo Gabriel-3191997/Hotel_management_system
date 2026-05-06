@@ -28,6 +28,7 @@ import BookingBellaCasaHotel from "./components/Bookings/pages/bella_casa_hotel"
 import BookingSinkorPalaceHotel from "./components/Bookings/pages/sinkor_palace";
 import BookingFammingtonHotel from "./components/Bookings/pages/fammington_hotel";
 import axios from "axios";
+import AdminDefault from "./components/Admin/components/default";
 
 class App extends React.Component {
   state = {
@@ -74,6 +75,7 @@ class App extends React.Component {
           <Route path="/two-factor-auth" element={<AuthCode />} />
           <Route path="/forget-password" element={<ForgotPassword />} />
           <Route path="/signup" element={<SignupForm />} />
+          <Route path="/admin" element={<AdminDefault />} />
           <Route path="/bookings" element={<BookingHomePage />} />
           <Route
             path="/bookings/hotels/royal-grand-hotel"
