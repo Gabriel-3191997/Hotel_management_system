@@ -144,7 +144,7 @@ class DashBoard extends React.Component {
             </ul>
           </div>
         </aside>
-
+        {/* container */}
         <div class=" sm:ml-64">
           <div class="p-2 border-2 border-gray-200 border-dashed border-none rounded-none">
             <nav class="bg-white border-b  fixed w-full top-0 z-index border-none border-default">
@@ -183,16 +183,88 @@ class DashBoard extends React.Component {
             </h1>
           </div>
           <div
-            className="h-80 bg-white flex flex-wrap md:mx-8 md:justify-between justify-center md:mx-5"
+            className="h-auto bg-white flex flex-wrap md:mx-8 md:justify-between justify-center md:mx-5"
             id="analysis"
           >
             <div
               id="analysis-cards"
-              className="md:w-xl border capitalize border-gray-200 h-80"
+              className="md:w-xl border capitalize border-none border-gray-200 h-80"
             >
-              <span className="font-semibold md:p-4 text-md  md:mt-5">
-                reservations
-              </span>
+              <div className="bg-white rounded-2xl rounded-none  border-none border-gray-200 w-full max-w-3xl">
+                <div className="flex items-center justify-between mb-8">
+                  <span className="font-semibold md:p-4 text-md  md:mt-5">
+                    reservations
+                  </span>
+                  <button className="border border-gray-200 px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-50">
+                    This Week
+                  </button>
+                </div>
+
+                {/* Chart */}
+                <div className="relative h-72 md:mx-12">
+                  {/* Horizontal Grid Lines */}
+                  <div className="absolute inset-0 flex flex-col justify-between">
+                    {[100, 75, 50, 25, 0].map((item, index) => (
+                      <div
+                        key={index}
+                        className="relative border-t border-gray-200"
+                      >
+                        <span className="absolute -left-10 -top-3 text-sm">
+                          {item}%
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* SVG Line Graph */}
+                  <svg
+                    viewBox="0 0 700 260"
+                    className="absolute inset-0 w-full h-full"
+                    preserveAspectRatio="none"
+                  >
+                    {/* Line */}
+                    <path
+                      d="
+          M20 145
+          C60 140, 90 95, 120 80
+          S190 105, 220 115
+          S300 110, 330 112
+          S410 130, 440 120
+          S520 70, 550 60
+          S620 95, 680 110
+        "
+                      fill="none"
+                      stroke="#525354"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+
+                    {/* Dots */}
+                    {[
+                      [20, 145],
+                      [120, 80],
+                      [220, 115],
+                      [330, 112],
+                      [440, 120],
+                      [550, 60],
+                      [680, 110],
+                    ].map(([x, y], index) => (
+                      <circle key={index} cx={x} cy={y} r="7" fill="#1F1F1F" />
+                    ))}
+                  </svg>
+
+                  {/* Bottom Labels */}
+                  <div className="absolute -bottom-8 left-0 right-0 flex justify-between text-sm  px-2">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div id="analysis-cards" className="w-80 border h-50">
               chart2
