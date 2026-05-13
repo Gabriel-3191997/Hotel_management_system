@@ -162,30 +162,31 @@ class DashBoard extends React.Component {
           </div>
         </aside>
 
-        <div class="p-4 sm:ml-64">
-          <div class="p-4 border-2 border-gray-200 border-dashed border-none rounded-none dark:border-gray-700">
-            <div
-              id="header"
-              className="md:h-10 border-b-gray-200 border-b-2 border-none mb-5"
-            >
-              <h1 className="capitalize font-normal text-sm md:mx-4">
-                welcome,
-              </h1>
-            </div>
+        <div class=" sm:ml-64">
+          <div class="p-2 border-2 border-gray-200 border-dashed border-none rounded-none">
+            <nav class="bg-white border-b  border-none border-default">
+              <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <span class="self-center text-2xl md:text-xl text-heading md:mx-3 m-4 capitalize font-semibold whitespace-nowrap">
+                  dash board
+                </span>
+              </div>
+            </nav>
+
+            {/* cards */}
             <div className="flex flex-wrap justify-evenly md:gap-10 gap-5">
-              <div className="w-80 border border-gray-200 h-50">
+              <div className="w-80 border border-gray-200 h-30">
                 <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
                   Total Reservations
                 </h1>
                 <span className="text-left md:mx-5 md:py-3 text-2xl">10</span>
               </div>
-              <div className="w-80 border border-gray-200 h-50">
+              <div className="w-80 border border-gray-200 h-30">
                 <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
                   Total Guests
                 </h1>
                 <span className="text-left md:mx-5 md:py-3 text-2xl">20</span>
               </div>
-              <div className="w-80 border border-gray-200 h-50">
+              <div className="w-80 border border-gray-200 h-30">
                 <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
                   Total Rooms
                 </h1>
