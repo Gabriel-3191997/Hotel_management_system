@@ -234,57 +234,6 @@ class HotelBookingForm extends React.Component {
 
                   <form onSubmit={this.handleSubmit}>
                     <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
-                      hotel
-                    </h3>
-                    <div className="py-2 bg-white">
-                      <select
-                        name="Hotels"
-                        id="hotels"
-                        value={this.state.hotelName}
-                        onChange={(e) =>
-                          this.handleChange("hotelName", e.target.value)
-                        }
-                        className="capitalize mx-5 text-sm font-sans border-none bg-white"
-                      >
-                        <option
-                          value="royal grand hotel"
-                          className="capitalize text-sm"
-                        >
-                          royal grand hotel
-                        </option>
-                        <option
-                          value="corona hotel"
-                          className="capitalize text-sm"
-                        >
-                          corona hotel
-                        </option>
-                        <option
-                          value="boluvard hotel"
-                          className="capitalize text-sm"
-                        >
-                          boluvard hotel
-                        </option>
-                        <option
-                          value="bella cassa hotel"
-                          className="capitalize text-sm"
-                        >
-                          bella cassa hotel
-                        </option>
-                        <option
-                          value="fammington hotel"
-                          className="capitalize text-sm"
-                        >
-                          fammington hotel
-                        </option>
-                        <option
-                          value="sinkor palace hotel"
-                          className="capitalize text-sm"
-                        >
-                          sinkor palace hotel
-                        </option>
-                      </select>
-                    </div>
-                    <h3 className="mx-5 text-left text-sm font-semibold capitalize md:py-2">
                       availability
                     </h3>
                     <div className="flex flex-wrap justify-between gap-4 bg-white py-2">
