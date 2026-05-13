@@ -138,23 +138,6 @@ class DashBoard extends React.Component {
                   href="#"
                   class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                 >
-                  <svg
-                    class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"
-                    />
-                  </svg>
                   <span class="flex-1 ms-3 whitespace-nowrap">Log out</span>
                 </a>
               </li>
@@ -164,18 +147,18 @@ class DashBoard extends React.Component {
 
         <div class=" sm:ml-64">
           <div class="p-2 border-2 border-gray-200 border-dashed border-none rounded-none">
-            <nav class="bg-white border-b  border-none border-default">
-              <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <span class="self-center text-2xl md:text-xl text-heading md:mx-3 m-4 capitalize font-semibold whitespace-nowrap">
+            <nav class="bg-white border-b  fixed w-full top-0 z-index border-none border-default">
+              <div class="max-w-screen-xl flex flex-wrap items-center justify-between  p-2">
+                <span class="self-center text-2xl md:text-xl text-heading md:mx-2 m-4 capitalize font-semibold whitespace-nowrap">
                   dash board
                 </span>
               </div>
             </nav>
 
             {/* cards */}
-            <div className="flex flex-wrap justify-evenly md:gap-10 gap-5">
+            <div className="flex flex-wrap md:mt-28 justify-evenly md:gap-10 gap-5">
               <div className="w-80 border border-gray-200 h-30">
-                <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
+                <h1 className="font-semibold text-md text-lg md:mx-5 md:py-3">
                   Total Reservations
                 </h1>
                 <span className="text-left md:mx-5 md:py-3 text-2xl">10</span>
@@ -192,6 +175,27 @@ class DashBoard extends React.Component {
                 </h1>
                 <span className="text-left md:mx-5 md:py-3 text-2xl">5</span>
               </div>
+            </div>
+          </div>
+          <div id="header" className="md:my-10">
+            <h1 className="font-semibold text-md md:mx-8 text-xl capitalize md:mx-5 md: py-3">
+              analysis
+            </h1>
+          </div>
+          <div
+            className="h-80 bg-white flex flex-wrap md:mx-8 md:justify-between justify-center md:mx-5"
+            id="analysis"
+          >
+            <div
+              id="analysis-cards"
+              className="md:w-xl border capitalize border-gray-200 h-80"
+            >
+              <span className="font-semibold md:p-4 text-md  md:mt-5">
+                reservations
+              </span>
+            </div>
+            <div id="analysis-cards" className="w-80 border h-50">
+              chart2
             </div>
           </div>
         </div>
