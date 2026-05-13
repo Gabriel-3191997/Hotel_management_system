@@ -9,7 +9,7 @@ class DashBoard extends React.Component {
           data-drawer-toggle="sidebar-multi-level-sidebar"
           aria-controls="sidebar-multi-level-sidebar"
           type="button"
-          class="text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden"
+          class="text-heading bg-white box-border border border-transparent hover:bg-white focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded-base ms-3 mt-3 text-sm p-2 focus:outline-none inline-flex sm:hidden"
         >
           <span class="sr-only">Open sidebar</span>
           <svg
@@ -40,15 +40,15 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                 >
-                  <span class="ms-3">Dashboard</span>
+                  <span class="ms-3">Home</span>
                 </a>
               </li>
               <li>
                 <button
                   type="button"
-                  class="flex items-center w-full justify-between px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                  class="flex items-center w-full justify-between px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                   aria-controls="dropdown-example"
                   data-collapse-toggle="dropdown-example"
                 >
@@ -77,7 +77,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                     >
                       Add Hotels
                     </a>
@@ -85,7 +85,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                     >
                       Booking Summary
                     </a>
@@ -93,7 +93,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                     >
                       Guests
                     </a>
@@ -101,7 +101,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                     >
                       Rooms
                     </a>
@@ -111,7 +111,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Billing</span>
                 </a>
@@ -119,7 +119,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Invoice</span>
                 </a>
@@ -127,7 +127,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Settings</span>
                 </a>
@@ -136,10 +136,10 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
                 >
                   <svg
-                    class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-fg-brand"
+                    class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -163,284 +163,33 @@ class DashBoard extends React.Component {
         </aside>
 
         <div class="p-4 sm:ml-64">
-          <div class="p-4 border-1 border-default border-dashed rounded-base">
-            <div class="grid grid-cols-3 gap-4 mb-4">
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
+          <div class="p-4 border-2 border-gray-200 border-dashed border-none rounded-none dark:border-gray-700">
+            <div
+              id="header"
+              className="md:h-10 border-b-gray-200 border-b-2 border-none mb-5"
+            >
+              <h1 className="capitalize font-normal text-sm md:mx-4">
+                welcome,
+              </h1>
             </div>
-            <div class="flex items-center justify-center h-48 rounded-base bg-neutral-secondary-soft mb-4">
-              <p class="text-fg-disabled">
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 12h14m-7 7V5"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div class="grid grid-cols-2 gap-4 mb-4">
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
+            <div className="flex flex-wrap justify-evenly md:gap-10 gap-5">
+              <div className="w-80 border border-gray-200 h-50">
+                <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
+                  Total Reservations
+                </h1>
+                <span className="text-left md:mx-5 md:py-3 text-2xl">10</span>
               </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
+              <div className="w-80 border border-gray-200 h-50">
+                <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
+                  Total Guests
+                </h1>
+                <span className="text-left md:mx-5 md:py-3 text-2xl">20</span>
               </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center justify-center h-48 rounded-base bg-neutral-secondary-soft mb-4">
-              <p class="text-fg-disabled">
-                <svg
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 12h14m-7 7V5"
-                  />
-                </svg>
-              </p>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
-              </div>
-              <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                  <svg
-                    class="w-5 h-5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 12h14m-7 7V5"
-                    />
-                  </svg>
-                </p>
+              <div className="w-80 border border-gray-200 h-50">
+                <h1 className="font-semibold text-md text-lg md:mx-5 md: py-3">
+                  Total Rooms
+                </h1>
+                <span className="text-left md:mx-5 md:py-3 text-2xl">5</span>
               </div>
             </div>
           </div>
