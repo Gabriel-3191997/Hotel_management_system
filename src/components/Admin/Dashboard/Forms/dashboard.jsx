@@ -90,24 +90,6 @@ class DashBoard extends React.Component {
                       Booking Summary
                     </a>
                   </li>
-
-                  <li>
-                    <a
-                      href="#"
-                      className="pl-10 flex items-center px-2 py-2 text-white hover:bg-blue-800"
-                    >
-                      Guests
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="#"
-                      className="pl-10 flex items-center px-2 py-2 text-white hover:bg-blue-800"
-                    >
-                      Rooms
-                    </a>
-                  </li>
                 </ul>
               </li>
 
