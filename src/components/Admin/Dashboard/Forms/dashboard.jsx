@@ -302,18 +302,18 @@ class DashBoard extends React.Component {
                     <span className="text-xl text-gray-600">24 (40%)</span>
                   </div>
 
-                  {/* Occupied */}
+                  {/* approved */}
                   <div className="flex items-center justify-between gap-10">
                     <div className="flex items-center gap-4">
                       <div className="h-4 w-4 rounded-full bg-blue-900"></div>
 
-                      <span className="text-xl text-gray-700">Approved</span>
+                      <span className="text-lg text-gray-700">Approve</span>
                     </div>
 
-                    <span className="text-xl text-gray-600">28 (47%)</span>
+                    <span className="text-lg text-gray-600">28 (47%)</span>
                   </div>
 
-                  {/* Reserved */}
+                  {/* decline */}
                   <div className="flex items-center justify-between gap-10">
                     <div className="flex items-center gap-4">
                       <div className="h-4 w-4 rounded-full bg-blue-400"></div>
@@ -324,7 +324,7 @@ class DashBoard extends React.Component {
                     <span className="text-xl text-gray-600">6 (10%)</span>
                   </div>
 
-                  {/* Out of Order */}
+                  {/* pending */}
                   <div className="flex items-center justify-between gap-10">
                     <div className="flex items-center gap-4">
                       <div className="h-4 w-4 rounded-full bg-blue-300"></div>
