@@ -35,12 +35,12 @@ class DashBoard extends React.Component {
           class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
           aria-label="Sidebar"
         >
-          <div class="h-full px-3 py-4 overflow-y-auto bg-black border-e border-default">
+          <div class="h-full px-3 py-4 overflow-y-auto bg-blue-950 border-e border-default">
             <ul class="space-y-2 font-medium">
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                 >
                   <span class="ms-3">Home</span>
                 </a>
@@ -48,7 +48,7 @@ class DashBoard extends React.Component {
               <li>
                 <button
                   type="button"
-                  class="flex items-center w-full justify-between px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                  class="flex items-center w-full justify-between px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                   aria-controls="dropdown-example"
                   data-collapse-toggle="dropdown-example"
                 >
@@ -77,7 +77,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                     >
                       Add Hotels
                     </a>
@@ -85,7 +85,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                     >
                       Booking Summary
                     </a>
@@ -93,7 +93,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                     >
                       Guests
                     </a>
@@ -101,7 +101,7 @@ class DashBoard extends React.Component {
                   <li>
                     <a
                       href="#"
-                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                      class="pl-10 flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                     >
                       Rooms
                     </a>
@@ -111,7 +111,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Billing</span>
                 </a>
@@ -119,7 +119,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Invoice</span>
                 </a>
@@ -127,7 +127,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Settings</span>
                 </a>
@@ -136,7 +136,7 @@ class DashBoard extends React.Component {
               <li>
                 <a
                   href="#"
-                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-gray-800 hover:text-white group"
+                  class="flex items-center px-2 py-1.5 text-white rounded-none hover:bg-blue-800 hover:text-white group"
                 >
                   <span class="flex-1 ms-3 whitespace-nowrap">Log out</span>
                 </a>
@@ -183,12 +183,12 @@ class DashBoard extends React.Component {
             </h1>
           </div>
           <div
-            className="h-auto bg-white flex flex-wrap md:mx-8 md:justify-between justify-center md:mx-5"
+            className="h-auto bg-white flex flex-wrap md:mx-8 md:justify-evenly justify-center md:mx-5"
             id="analysis"
           >
             <div
               id="analysis-cards"
-              className="md:w-xl border capitalize border-none border-gray-200 h-80"
+              className="md:w-lg border capitalize border-none border-gray-200 h-80"
             >
               <div className="bg-white rounded-2xl rounded-none  border-none border-gray-200 w-full max-w-3xl">
                 <div className="flex items-center justify-between mb-8">
@@ -266,8 +266,90 @@ class DashBoard extends React.Component {
                 </div>
               </div>
             </div>
-            <div id="analysis-cards" className="w-80 border h-50">
-              chart2
+            {/* Availability */}
+            <div
+              id="analysis-cards"
+              className="w-auto bg-white border border-gray-200 p-5"
+            >
+              {/* Header */}
+              <h1 className="text-2xl font-semibold text-gray-900 mb-10">
+                availability
+              </h1>
+
+              <div className="flex items-center justify-center">
+                {/* Circle */}
+                <div className="relative w-56 h-56">
+                  <div
+                    className="w-full h-full rounded-full"
+                    style={{
+                      background: `conic-gradient(
+            #bdbdbd 0% 40%,
+            #d6d6d6 40% 87%,
+            #c4c4c4 87% 97%,
+            #e3e3e3 97% 100%
+          )`,
+                    }}
+                  >
+                    {/* Inner Circle */}
+                    <div className="absolute inset-5 bg-white rounded-full flex flex-col items-center justify-center">
+                      <h1 className="text-5xl font-semibold text-gray-900">
+                        60
+                      </h1>
+
+                      <p className="text-gray-500 text-lg mt-2">Total Rooms</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Legends */}
+                <div className="space-y-8 ml-8">
+                  {/* Available */}
+                  <div className="flex items-center justify-between gap-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-4 rounded-full bg-gray-500"></div>
+
+                      <span className="text-xl text-gray-700">Available</span>
+                    </div>
+
+                    <span className="text-xl text-gray-600">24 (40%)</span>
+                  </div>
+
+                  {/* Occupied */}
+                  <div className="flex items-center justify-between gap-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-4 rounded-full bg-gray-300"></div>
+
+                      <span className="text-xl text-gray-700">Occupied</span>
+                    </div>
+
+                    <span className="text-xl text-gray-600">28 (47%)</span>
+                  </div>
+
+                  {/* Reserved */}
+                  <div className="flex items-center justify-between gap-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-4 rounded-full bg-gray-400"></div>
+
+                      <span className="text-xl text-gray-700">Reserved</span>
+                    </div>
+
+                    <span className="text-xl text-gray-600">6 (10%)</span>
+                  </div>
+
+                  {/* Out of Order */}
+                  <div className="flex items-center justify-between gap-10">
+                    <div className="flex items-center gap-3">
+                      <div className="w-4 h-4 rounded-full bg-gray-300"></div>
+
+                      <span className="text-xl text-gray-700">
+                        Out of Order
+                      </span>
+                    </div>
+
+                    <span className="text-xl text-gray-600">2 (3%)</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
