@@ -272,30 +272,29 @@ class DashBoard extends React.Component {
                 </div>
               </div>
             </div>
-
             {/* Availability */}
             <div className="w-xl bg-white border-none border-gray-200 p-5">
               <h1 className="text-xl capitalize font-semibold text-gray-900 mb-10 md:mx-5">
                 availability
               </h1>
 
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center gap-10">
                 {/* Circle */}
-                <div className="relative flex h-56 w-56 items-center justify-center rounded-full bg-[conic-gradient(var(--color-blue-900)_0%_40%,var(--color-blue-700)_40%_87%,var(--color-blue-500)_87%_97%,var(--color-blue-300)_97%_100%)] shadow-sm">
+                <div className="relative flex h-56 w-56 items-center justify-center rounded-full bg-[conic-gradient(theme(colors.blue.500)_0%_40%,theme(colors.blue.900)_40%_87%,theme(colors.blue.400)_87%_97%,theme(colors.blue.300)_97%_100%)] shadow-sm">
                   {/* Inner Circle */}
-                  <div className="flex h-44 w-44 flex-col items-center justify-center rounded-full bg-white ring-1 ring-gray-100">
+                  <div className="flex h-44 w-44 flex-col items-center justify-center rounded-full bg-white">
                     <h1 className="text-5xl font-semibold text-gray-900">60</h1>
 
-                    <p className="text-gray-500 text-lg mt-2">Total Rooms</p>
+                    <p className="mt-2 text-lg text-gray-500">Total Rooms</p>
                   </div>
                 </div>
 
                 {/* Legends */}
-                <div className="space-y-8 ml-8">
+                <div className="space-y-8">
                   {/* Available */}
                   <div className="flex items-center justify-between gap-10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 rounded-full bg-gray-500"></div>
+                    <div className="flex items-center gap-4">
+                      <div className="h-4 w-4 rounded-full bg-blue-500"></div>
 
                       <span className="text-xl text-gray-700">Available</span>
                     </div>
@@ -305,8 +304,8 @@ class DashBoard extends React.Component {
 
                   {/* Occupied */}
                   <div className="flex items-center justify-between gap-10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 rounded-full bg-gray-300"></div>
+                    <div className="flex items-center gap-4">
+                      <div className="h-4 w-4 rounded-full bg-blue-900"></div>
 
                       <span className="text-xl text-gray-700">Occupied</span>
                     </div>
@@ -316,8 +315,8 @@ class DashBoard extends React.Component {
 
                   {/* Reserved */}
                   <div className="flex items-center justify-between gap-10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 rounded-full bg-gray-400"></div>
+                    <div className="flex items-center gap-4">
+                      <div className="h-4 w-4 rounded-full bg-blue-400"></div>
 
                       <span className="text-xl text-gray-700">Reserved</span>
                     </div>
@@ -327,8 +326,8 @@ class DashBoard extends React.Component {
 
                   {/* Out of Order */}
                   <div className="flex items-center justify-between gap-10">
-                    <div className="flex items-center gap-3">
-                      <div className="w-4 h-4 rounded-full bg-gray-200"></div>
+                    <div className="flex items-center gap-4">
+                      <div className="h-4 w-4 rounded-full bg-blue-300"></div>
 
                       <span className="text-xl text-gray-700">
                         Out of Order
