@@ -30,6 +30,12 @@ import BookingFammingtonHotel from "./components/Bookings/pages/fammington_hotel
 import axios from "axios";
 import AdminDefault from "./components/Admin/components/default";
 import AdminDashboard from "./components/Admin/Dashboard/Forms/dashboard";
+import AddHotel from "./components/Admin/Dashboard/pages/add_hotel";
+import BookingSummary from "./components/Admin/Dashboard/pages/booking_summary";
+import Billing from "./components/Admin/Dashboard/pages/billing";
+import Invoice from "./components/Admin/Dashboard/pages/invoice";
+import Settings from "./components/Admin/Dashboard/pages/settings";
+import Logout from "./components/Admin/Dashboard/pages/logout";
 
 class App extends React.Component {
   state = {
@@ -77,6 +83,15 @@ class App extends React.Component {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/admin" element={<AdminDefault />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/dashboard/add-hotel" element={<AddHotel />} />
+          <Route
+            path="/admin/dashboard/booking-summary"
+            element={<BookingSummary />}
+          />
+          <Route path="/admin/dashboard/billing" element={<Billing />} />
+          <Route path="/admin/dashboard/invoice" element={<Invoice />} />
+          <Route path="/admin/dashboard/settings" element={<Settings />} />
+          <Route path="/admin/dashboard/logout" element={<Logout />} />
           <Route path="/bookings" element={<BookingHomePage />} />
           <Route
             path="/bookings/hotels/royal-grand-hotel"
