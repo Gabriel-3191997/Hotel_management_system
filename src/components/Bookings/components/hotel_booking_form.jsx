@@ -87,7 +87,7 @@ class HotelBookingForm extends React.Component {
 
       if (response.ok && (resJson ? resJson.success : true)) {
         console.log("Booking successful", resJson);
-
+        // clear form and navigate to submission page
         this.setState(
           {
             checkIn: null,
@@ -100,8 +100,10 @@ class HotelBookingForm extends React.Component {
             hotelName: this.props.hotelName || hotelName,
             error: "",
             success: true,
+            redirectToSubmission: true,
           },
           () => {
+            // keep success message state briefly (not strictly required since we'll redirect)
             setTimeout(() => this.setState({ success: false }), 3500);
           },
         );
