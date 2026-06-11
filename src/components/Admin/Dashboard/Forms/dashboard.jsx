@@ -29,7 +29,7 @@ class DashBoard extends React.Component {
         </div>
 
         {/* Analysis Section */}
-        <div className="h-auto bg-white flex flex-wrap md:mx-8 justify-center">
+        <div className="h-auto bg-white flex flex-wrap justify-center items-center">
           {/* Graph */}
           <div className="md:w-lg border-none h-80">
             <div className="bg-white w-full max-w-3xl">
